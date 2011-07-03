@@ -1,0 +1,165 @@
+/*
+Theme Name:copyright
+Description:copyright theme.
+Author:copyright
+Version:1.0
+Tags:copyright theme
+*/
+
+/* reset */
+html,body,address,blockquote,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,bdo,big,br,cite,code,dfn,em,i,img,kbd,q,samp,small,span,strong,sub,sup,tt,var,legend,fieldset {margin:0;padding:0;}img,fieldset {border:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+a, a:visited {color:#666;text-decoration:none;}
+a:hover {color:#0080cc;text-decoration:underline;}
+em,i {font-style:normal;}
+li {list-style:none;}
+h1,h2,h3,h4,h5 {font-size:100%;}
+html {overflow-y:scroll;}
+table {border-collapse:collapse;}
+
+.l2 a, .l2 a:visited {color:#0080cc;}
+.l2 a:hover {color:#f27d13;}
+.txt {padding:3px 5px;width:170px;height:18px;line-height:18px;background:none;border:1px solid #CFCFCF;}
+.txt:focus {border-color:#7DBDE2;}
+.clearall {zoom:1;}
+.clearall:after {content:".";display:block;clear:both;height:0;visibility:hidden;}
+
+.select {position:relative;float:left;width:110px;line-height:20px;text-indent:10px;}
+	.select dt {cursor:pointer;}
+	.select dd {display:none;position:absolute;width:100%;border:1px solid #CBCBCB;background:#FFF;z-index:1;}
+		.select dd a, .select dd a:visited {display:block;height:20px;line-height:20px;color:#666;overflow:hidden;}
+		.select dd a:hover {text-decoration:none;color:#fff;background:#CBCBCB;}
+
+body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#FFF url(images/body_bg.jpg) repeat-x;}
+.index {background:#FFF url(images/index_bg.jpg) repeat-x;}
+
+#menu li, #download a, .sort-bd p a, .intro-hd {background:url(images/icon.png) no-repeat;}
+
+#page {position:relative;margin:0 auto;width:980px;}
+#header {position:relative;width:980px;height:100px;z-index:1;}
+	#logo {float:left;margin-top:25px;}
+	#meta {position:absolute;top:20px;right:0;text-align:right;color:#DDD;letter-spacing:2px;}
+		#meta a, #meta a:visited, #meta a:hover {color:#DDD;}
+	#menu {position:absolute;top:50px;right:-14px;}
+		#menu ul {font-size:18px;line-height:26px;}
+		#menu li {float:left;margin-right:-1px;padding:0 15px;background-position:-59px 8px;}
+		#menu li.home {background:none;}
+		#menu a, #menu a:visited, #menu a:hover {float:left;color:#FFF;}
+		#menu .menu-drop {position:relative;float:left;height:40px;}
+			#menu .menu-drop dd {display:none;position:absolute;top:30px;left:0;padding:5px 10px;width:85px;background:#FFF;border-bottom:2px solid #197EBE;font-size:12px;line-height:20px;}
+			#menu .menu-drop dd a, #menu .menu-drop dd a:visited {color:#666;height:20px;overflow:hidden;}
+			#menu .menu-drop dd a:hover {color:#0080CC;}
+
+#index-main {position:relative;padding-top:272px;height:370px;background:url(images/index_big.jpg) no-repeat;overflow:hidden;}
+	#count {position:absolute;top:130px;left:20px;width:200px;height:60px;line-height:24px;font-size:14px;overflow:hidden;}
+	#count li {height:60px;overflow:hidden;}
+	#count .on {position:absolute;height:60px;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+	#count p {padding-bottom:5px;height:30px;line-height:40px;border-bottom:1px solid #AEBED4;overflow:hidden;}
+	#count strong {float:left;width:155px;color:#0080cc;font:400 30px/30px Arial;letter-spacing:2px;}
+
+	#download {position:absolute;top:230px;left:25px;line-height:32px;}
+		#download a {float:left;margin-right:25px;padding-left:35px;font-size:14px;background-position:0 -36px;}
+		#download .tload {background-position:0 -72px;}
+
+	#sort {position:relative;width:980px;height:230px;overflow:hidden;}
+		#sort .sort-bd {margin-left:-210px;width:9999px;}
+		.sort-bd li {float:left;margin-top:10px;width:210px;height:217px;background:url(images/sort_bg.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg.png',sizingMethod='scale');overflow:hidden;}
+			.sort-bd h2 {margin-left:5px;padding-bottom:68px;height:42px;width:200px;border-top:5px solid;font:400 18px/42px "Microsoft Yahei";text-indent:15px;}
+			.c1 h2 {border-color:#F23380;}
+			.c2 h2 {border-color:#22A0CC;}
+			.c3 h2 {border-color:#3AB349;}
+			.c4 h2 {border-color:#D4B836;}
+			.sort-bd h2 a, .sort-bd h2 a:visited {color:#d8d8da;}
+			.sort-bd p {padding:0 10px;width:190px;color:#999;}
+				.sort-bd p a, .sort-bd p a:visited {float:left;margin-top:5px;padding-right:15px;color:#999;background-position:right -108px;overflow:hidden;}
+				.sort-bd p a:hover {color:#0080cc;}
+		.sort-bd .hover {margin-top:0;}
+		#scroll-btn {display:none;}
+			#scroll-btn a {display:block;position:absolute;top:90px;left:15px;padding-top:55px;width:21px;height:0;background:url(images/bg_others.png) no-repeat 0 -295px;z-index:9;overflow:hidden;}
+			#scroll-btn #scroll-next {left:auto;right:15px;background-position:-21px -295px;}
+		#sort .sort-ft {position:absolute;top:10px;right:0;width:100px;height:220px;background:url(images/sort_cover.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_cover.png',sizingMethod='scale');overflow:hidden;pointer-events:none;}
+		.scroll-hover #scroll-btn {display:block;}
+
+	#intro {width:980px;}
+		.intro-mod {float:left;width:410px;margin-right:40px;line-height:22px;color:#666;}
+			.intro-hd {margin-bottom:10px;width:100%;height:30px;line-height:30px;background-repeat:repeat-x;background-position:0 -144px;}
+				.intro-hd h2 {float:left;font:400 16px/30px "Microsoft Yahei";}
+				.intro-hd a {float:right;} 
+			.intro-mod em {color:#f27d13;}
+		.news {margin:0;width:530px;}
+			.news .intro-bd {position:relative;padding-left:130px;width:400px;height:80px;overflow:hidden;}
+			.news .intro-bd li {float:left;width:400px;line-height:20px;}
+				.news .intro-bd li a {float:left;}
+				.news .intro-bd li span {float:right;}
+			.news .intro-bd .pnews {_display:inline;float:left;margin-left:-130px;width:120px;height:80px;zoom:1;overflow:hidden;}
+				.pnews a, .pnews a:visited, .pnews img {cursor:pointer;display:block;width:120px;height:80px;color:#d6effe;overflow:hidden;}
+				.pnews a:hover {text-decoration:underline;}
+				.pnews span {position:absolute;left:0;top:54px;display:block;width:120px;height:26px;line-height:26px;text-align:center;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#A5333333', endColorstr='#A5333333');background:rgba(51,51,51,0.65);overflow:hidden;}
+
+
+#wrap {padding-top:46px;background:url(images/wrap_bg.jpg) no-repeat right 0;overflow:hidden;}	
+	#submain {float:left;margin-right:25px;width:180px;}
+	#main {float:left;width:775px;}
+
+		.subitem {margin-bottom:10px;width:100%;font:400 14px/30px "Mircrosoft Yahei";}
+			.sub-hd {width:179px;height:30px;text-indent:12px;background:url(images/bg_others.png) no-repeat;color:#08C;font-weight:400;overflow:hidden;}
+			.sub-bd {padding:10px;width:157px;border:1px solid #E3E3E3;border-width:0 1px;background:#FFF;overflow:hidden;}
+			.sub-ft {width:179px;height:6px;background:url(images/bg_others.png) no-repeat 0 -84px;overflow:hidden;}
+
+			.sub-nav .sub-hd {font-weight:700;height:44px;font-size:22px;color:#FFF;text-indent:42px;line-height:46px;}
+			.sub-nav .sub-bd {border-color:#0098DB;}
+				.sub-nav li {width:100%;height:30px;line-height:30px;border-bottom:1px solid #E3E3E3;text-indent:10px;font-weight:700;}
+				.sub-nav li.cur {background:url(images/bg_others.png) no-repeat 0 -197px;}
+			.sub-nav .sub-ft {background-position:0 -44px;}
+			
+			.phone .sub-hd {background-position:0 -54px;}
+			.phone .sub-bd {padding:0 0 0 70px;width:107px;height:36px;line-height:18px;font-size:12px;color:#666;background:url(images/bg_others.png) no-repeat 15px -128px;}
+
+			.qq .sub-hd {background-position:0 -94px;color:#f67a1c;}
+			.qq .sub-bd {padding:0 15px;width:147px;}
+				.qq .sub-bd p {padding:5px 0;height:25px;overflow:hidden;}
+
+		
+		#nav {height:44px;line-height:50px;}
+		#cont {padding-top:10px;overflow:hidden;}
+			.cont-item {margin-bottom:10px;}
+			.cont-hd {width:775px;height:36px;text-indent:5px;border-bottom:2px solid #DDD;font:400 20px/36px "Microsoft Yahei";}
+				.cont-bd .article {position:relative;padding:15px 0 15px 135px;min-height:86px;_height:86px;_zoom:1;border-bottom:1px solid #DDD;}
+				.cont-bd .article a {display:inline-block;_display:inline;_zoom:1;}
+				.cont-bd .article h3 {font:400 16px/24px "Microsoft Yahei";height:30px;}
+					.cont-bd h3 img {position:absolute;top:15px;left:0;width:120px;height:90px;-webkit-border-radius:5px;border-radius:5px;}
+				.cont-bd .article .view-all, .cont-bd .article .view-all:visited, .cont-bd .article .view-all:hover {margin-top:5px;width:80px;height:25px;line-height:25px;color:#FFF;background:url(images/bg_others.png) no-repeat 0 -168px;text-align:center;letter-spacing:1px;}
+
+			.login-table {margin-top:10px;width:700px;font-size:14px;}
+				.login-table th, .login-table td {padding:15px;border:1px solid #CDE6F9;}
+				.login-table th {width:115px;background:#EBF3F7;text-align:right;font-weight:400;}
+				.login-table .btn th, .login-table .btn td {background:none;border:0 none;}
+				.login-table .submit {cursor:pointer;margin:0 5px 0 0;padding:0;width:55px;height:30px;background:url(images/bg_others.png) no-repeat 0 -231px;color:#FFF;border:0 none;font:700 14px/30px simsun;}
+				.login-table .submit:hover {text-decoration:underline;}
+				.login-table .btn a {font-weight:700;}
+			.reg-table th, .reg-table td {padding:10px;}
+			.reg-table .reg-tip {font:400 12px/18px simsun;}
+			.reg-table .submit {width:185px;background-position:0 -261px;}
+			.reg-rules {font-size:12px;height:144px;overflow-y:scroll;}
+
+			.data-table {margin-top:10px;width:775px;}
+				.data-table th, .data-table td {padding:0 5px;border-bottom:1px solid #EBEBEB;height:38px;line-height:38px;text-align:left;}
+				.data-table th {height:23px;line-height:23px;font-weight:700;background:url(images/data_hd_bg.jpg) repeat-x;color:#333;}
+					.data-table tr:hover td {background:#FFFFE9;}
+
+		#article {padding-top:10px;font-size:14px;font-family:"宋体";}
+			#article .cont-hd {margin-bottom:10px;height:58px;border-bottom-width:1px;}
+			#article .cont-hd h1 {display:inline;font:400 22px/56px "Microsoft Yahei";color:#0080cc;}
+			#article .cont-hd span {font:400 12px/18px "Microsoft Yahei";}
+
+			.atc-table {margin-top:15px;width:775px;border:1px solid #CCC;}
+				.atc-table th {padding:0 15px;height:46px;line-height:46px;text-align:left;background:#EBF3F7;color:#0080cc;font:400 18px/46px "Microsoft Yahei";}
+				.atc-table td {padding:0 5px;height:30px;line-height:30px;border-bottom:1px dotted #CBCBCB;}
+					.atc-table img {float:left;margin-top:2px;}
+
+
+#footer {margin-top:20px;padding-bottom:20px;border-top:1px solid #DDD;background:#F5F5F5;}
+#footer.index-footer {border:0 none;background:none;}
+	.footer-cont {margin:0 auto;width:980px;}
+	#copyright {float:left;padding:10px 0 0 90px;line-height:20px;color:#666;background:url(images/sublogo.jpg) no-repeat;}
+	#friends {float:right;margin-top:25px;width:110px;height:20px;line-height:20px;background:url(images/friend_bg.jpg) no-repeat;}
+		#friends dt {cursor:pointer;color:#999;text-indent:10px;}
