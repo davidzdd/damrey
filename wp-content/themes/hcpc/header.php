@@ -46,7 +46,7 @@
 						$cat = get_category($catId);
 						$catUrl = get_category_link($cat);
 						$realHtml = "<dl class='menu-drop'><dt><a href='{$catUrl}'>{$cat->name}</a></dt><dd>";
-						$childCatArr = get_terms('category',"child_of={$cat->term_id}");
+						$childCatArr = get_terms('category',"child_of={$cat->term_id}&hierarchical=0&hide_empty=0");
 						if(!is_wp_error($childCatArr) && count($childCatArr)>0){
 							foreach ($childCatArr as $childCat){
 								$url = get_category_link($childCat);

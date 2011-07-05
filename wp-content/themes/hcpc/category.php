@@ -1,31 +1,36 @@
 <?php get_header(); ?>
  	<?php 
-		$catArr = get_the_category();
-		$curCat = $catArr[0];
-		$childCatArr = get_terms('category',"child_of={$curCat->term_id}");
+		$curCat = get_queried_object();
+		$childCatArr = get_terms('category',"child_of={$curCat->term_id}&hierarchical=0&hide_empty=0");
+		$linkSeparator = '&nbsp;>&nbsp;';
+		$urlPath = get_category_parents($curCat->term_id , true, $linkSeparator, false);
+		$urlPath = substr($urlPath, 0, strripos($urlPath, $linkSeparator));
 	?>
 	 <section id="wrap">
 		<?php get_sidebar(); ?>
 		<div id="main">
 			<div id="nav">
-				<span>当前位置：</span><a href="#">首页</a> &gt; <a href="#">办事大厅</a> &gt;美术作品
+				<span>当前位置：</span><a href="<?php echo home_url()?>">首页</a>&nbsp;>&nbsp;<?php echo $urlPath?>
 			</div>
 			<div id="cont">
 			<?php if(is_category() && !is_wp_error($childCatArr) && count($childCatArr)>0){?>
+				<?php foreach ($childCatArr as $childCat){?>
 				<div class="cont-item">
-					<h1 class="cont-hd"><?php echo $childCat->name?></h1>
+					<h1 class="cont-hd"><a href="<?php echo get_category_link($childCat->term_id)?>"><?php echo $childCat->name?></a></h1>
 					<div class="cont-bd">
-						<?php while ( have_posts() ) : the_post(); ?>
+						<?php $curPosts = get_posts( array( 'category' => $childCat->term_id, 'numberposts'=>2 ))?>
+						<?php foreach($curPosts as $post){?>
 						<article class="article">
-							<a href="<?php the_permalink()?>" title="<?php the_title(); ?>">
-								<h3><?php the_title()?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php the_title()?>"/></h3>
+							<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
+								<h3><?php echo $post->post_title?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php echo $post->post_title?>"/></h3>
 							</a>
-							<p><?php echo mb_substr(get_the_excerpt(),0,100).'... ...'?></p>
-							<a href="<?php the_permalink()?>" class="view-all">查看详细</a>
+							<p><?php echo mb_substr($post->post_content,0,100).'... ...'?></p>
+							<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
 						</article>
-						<?php endwhile; ?>
+						<?php }?>
 					</div>
 				</div>
+				<?php }?>
 			<?php }else{?>
 				<div class="cont-item">
 					<div class="cont-bd">
@@ -34,7 +39,7 @@
 							<a href="<?php the_permalink()?>" title="<?php the_title(); ?>">
 								<h3><?php the_title()?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php the_title()?>"/></h3>
 							</a>
-							<p><?php echo mb_substr(get_the_excerpt(),0,100).'... ...'?></p>
+							<p><?php echo mb_substr($post->post_content,0,100).'... ...'?></p>
 							<a href="<?php the_permalink()?>" class="view-all">查看详细</a>
 						</article>
 						<?php endwhile; ?>
