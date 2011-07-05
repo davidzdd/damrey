@@ -519,8 +519,9 @@ function get_current_theme() {
 	$theme_names = array_keys($themes);
 	$current_template = get_option('template');
 	$current_stylesheet = get_option('stylesheet');
-	$current_theme = 'Twenty Ten';
-
+	/*使用copyright网站风格 by mo at 2011-07-04*/
+	//$current_theme = 'Twenty Ten';
+	$current_theme = 'copyright';
 	if ( $themes ) {
 		foreach ( (array) $theme_names as $theme_name ) {
 			if ( $themes[$theme_name]['Stylesheet'] == $current_stylesheet &&

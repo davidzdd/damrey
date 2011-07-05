@@ -1,20 +1,16 @@
 <footer id="footer" class='clearall  <?php if ( is_home() ) : ?>index-footer<?php endif; ?>' >
 	<div class="footer-cont">
+		<!-- 站点页尾 -->
 		<div id="copyright">
-			<p>版权所有&copy 2010 杭州市版权保护管理中心 </p>
-			<p>地址：杭州市西湖区文三路90号东部软件园创新大厦A106</p>
-			<p>电话：0571-87889048 传真：0571-87889048 邮箱：hcpczj@gmail.com</p>
+			<?php echo get_post($dummy_id=8)->post_content;?>
 		</div>
 
 		<dl id="friends" class="select">
 			<dt>友情链接</dt>
 			<dd>
-				<a href="#" target="_blank">xxxxx网</a>
-				<a href="#" target="_blank">xxxxx网</a>
-				<a href="#" target="_blank">xxxxx网</a>
-				<a href="#" target="_blank">xxxxx网</a>
-				<a href="#" target="_blank">xxxxx网</a>
-				<a href="#" target="_blank">xxxxx网</a>
+				<?php foreach(get_bookmarks(array("category" => 5)) as $linkObj){?>
+					<a href="<?php echo $linkObj->link_url?>" target="_blank"><?php echo $linkObj->link_name?></a>
+				<?php }?>
 			</dd>
 		</dl>
 	</div>

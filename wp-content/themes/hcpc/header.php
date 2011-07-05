@@ -34,26 +34,34 @@
 				<a href="<?php echo wp_login_url(); ?>" title="login">登陆</a> - <a href="<?php echo wp_login_url(); ?>" title="login">注册</a>
 			<?php endif; ?>
 		</div>
-
+		<!-- 站点导航 -->
 		<nav id="menu">
 			<ul>
-				<li class="home"><a href="#">首页</a></li>
-				<li>
-					<dl class="menu-drop">
-						<dt><a href="#">办事大厅</a></dt>
-						<dd>
-							<a href="#">美术作品</a>
-							<a href="#">美术作品</a>
-							<a href="#">美术作品</a>
-							<a href="#">美术作品</a>
-							<a href="#">美术作品</a>
-						</dd>
-					</dl>
-				</li>
-				<li><a href="#">作品备案</a></li>
-				<li><a href="#">版权贸易</a></li>
-				<li><a href="#">新闻资讯</a></li>
-				<li><a href="#">关于我们</a></li>
+				<?php 
+					$nav = get_post($dummy_id=7)->post_content;
+					echo preg_replace_callback('/(\${catid=(\d)})/', "getListByCatId", $nav);
+					
+					function getListByCatId($matcher){
+						$catId = $matcher[2];
+						$cat = get_category($catId);
+						$catUrl = get_category_link($cat);
+						$realHtml = "<dl class='menu-drop'><dt><a href='{$catUrl}'>{$cat->name}</a></dt><dd>";
+						$childCatArr = get_terms('category',"child_of={$cat->term_id}");
+						if(!is_wp_error($childCatArr) && count($childCatArr)>0){
+							foreach ($childCatArr as $childCat){
+								$url = get_category_link($childCat);
+								$realHtml .= "<a href='{$url}'>{$childCat->name}</a>";
+							}
+						}else{
+							$posts = get_posts( array( 'category' => $cat->term_id ));
+							foreach ($posts as $post) {
+								$url = get_permalink($post);
+								$realHtml .= "<a href='{$url}'>{$post->post_title}</a>";
+							}
+						}
+						return $realHtml.'</dd></dl>';
+					}
+				?>
 			</ul>
 		</nav>
 	</header>
