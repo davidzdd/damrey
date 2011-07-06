@@ -164,3 +164,25 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 	#copyright {float:left;padding:10px 0 0 90px;line-height:20px;color:#666;background:url(images/sublogo.jpg) no-repeat;}
 	#friends {float:right;margin-top:25px;width:110px;height:20px;line-height:20px;background:url(images/friend_bg.jpg) no-repeat;}
 		#friends dt {cursor:pointer;color:#999;text-indent:10px;}
+
+/* pop window */
+.confirm-tips {width:320px;}
+  .tips-txt {padding:15px 0;text-align:center;}
+    .tips-txt p {margin-bottom:20px;}
+      .tips-txt select {width:200px;}
+.tips-btn {padding:5px 0;text-align:center;}
+	.tips-btn .inp_sm,  .tips-btn .inp_esc {margin:0 5px;}
+.confirmbox {position:absolute;z-index:100;top:0;left:0;width:100%;overflow:hidden;}
+	.confirm-fade {position:absolute;z-index:0;top:0;left:0;width:2000px;height:3000px;background:#000;opacity:0.5;filter:alpha(opacity:50);}
+		.confirm-fade iframe {width:2000px;height:3000px;opacity:0;filter:alpha(opacity:0)}
+	.confirm-wrap {position:absolute;z-index:1;overflow:hidden;}
+		.confirm-wrap table {width:100%;}
+			.confirm-wrap .td-fade {height:10px;background:#000;opacity:0.4;filter:alpha(opacity:65);_filter:alpha(opacity:40);}
+			.confirm-wrap .wn, .confirm-wrap .ne, .confirm-wrap .sw, .confirm-wrap .es {width:10px;height:10px;}
+			.confirm-wrap .wn {background:url(./images/win/wn.png) no-repeat 0 0;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="./images/win/wn.png" mce_src="./images/win/wn.png");}
+			.confirm-wrap .ne {background:url(./images/win/ne.png) no-repeat 0 0;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="./images/win/ne.png" mce_src="./images/win/ne.png");}
+			.confirm-wrap .sw {background:url(./images/win/sw.png) no-repeat 0 0;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="./images/win/sw.png" mce_src="./images/win/sw.png");}
+			.confirm-wrap .es {background:url(./images/win/es.png) no-repeat 0 0;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="./images/win/es.png" mce_src="./images/win/es.png");}
+		.confirm-wrap h5 {height:27px;text-indent:10px;font:800 12px/27px "Microsoft YaHei";color:#FFF;background:#2477B1;}
+		.confirm-close {float:right;margin:-20px 7px 0 0;padding-top:13px;width:13px;height:0;background:url(../images/main.png) no-repeat -638px 1px;overflow:hidden;}
+		.confirm-msg {background:#FFF;}

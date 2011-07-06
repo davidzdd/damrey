@@ -20,28 +20,28 @@
 							<tbody>
 								<tr>
 									<th>用户名：</th>
-									<td><input type="text" name="uname" class="txt" /></td>
+									<td><input id="name" name="name" type="text" class="txt" /></td>
 									<td class="reg-tip">可由6-20个字符组成（包括小写字母、数字、下划线、中文，一个汉字为两个字符），一旦注册成功用户名不能修改。</td>
 								</tr>
 								<tr>
 									<th>密码：</th>
-									<td><input type="password" name="upwd" class="txt" /></td>
+									<td><input id="pwd" name="pwd" type="password" class="txt" /></td>
 									<td class="reg-tip">密码由6-16个字符组成，请使用英文字母、数字或符号的组合密码，尽量不要单独使用英文字母、数字或符号作为您的密码。</td>
 								</tr>
 								<tr>
 									<th>再输入一次密码：</th>
-									<td><input type="password" name="cpwd" class="txt" /></td>
+									<td><input id="repwd" name="repwd" type="password" class="txt" /></td>
 									<td class="reg-tip">请再输入一遍您上面输入的密码。</td>
 								</tr>
-								<tr>
-									<th>验证码：</th>
-									<td><input type="text" name="ucode" class="txt" /></td>
-									<td class="reg-tip"><a href="javascript:;"><img src="http://www.19go.com/util/capture?1291872334873" alt="#"/></a> <a href="javascript:;">看不清楚，点击换一张 </a></td>
-								</tr>
+<!--								<tr>-->
+<!--									<th>验证码：</th>-->
+<!--									<td><input id="captcha" name="captcha" type="text" class="txt" /></td>-->
+<!--									<td class="reg-tip"><a href="javascript:;"><img src="http://www.19go.com/util/capture?1291872334873" alt="#"/></a> <a href="javascript:;">看不清楚，点击换一张 </a></td>-->
+<!--								</tr>-->
 								<tr class="btn">
 									<th></th>
 									<td colspan="2">
-										<input type="button" name="submit" class="submit reg-btn" value="同意以下注册条款并提交"/>
+										<input id="regButton" name="regButton" type="button" class="submit reg-btn" value="同意以下注册条款并提交"/>
 									</td>
 								</tr>
 								<tr class="noborder">
@@ -64,61 +64,95 @@
 	</section>
 
 </div>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/validate.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/site.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/ed.js"></script>
 <script type="text/javascript">
 <!--
 $(function(){
-	$("#loginButton").click(function(){
+	$("#regButton").click(function(){
 		var id = this.id;
-		Act.login(id);
+		Act.register(id);
 		return false;
 	});
 });
 
 var Act = {
-	loginSymbol:0,
-	login:function(id){
+	registerSymbol:0,
+	register:function(id){
 		if(Act.validate()){
-			var remember = 0;
-			if($("#remember").attr("checked")==true){
-				remember = 1;
-			}	
-			Act.loginSymbol=1;
-			var data = 'name='+site.getValue("name")+"&pwd="+site.getValue("pwd")+"&remember="+remember;
-			site.ajaxSubmit('<?php echo site_url('login.php	');?>', data, function(res){
-				Act.loginSymbol=0;
-				if(res.symbol==true){
+			Act.registerSymbol=1;
+			var data = 'name='+site.getEncodeValue("name")+"&pwd="+site.getEncodeValue("pwd")+"&repwd="+site.getEncodeValue("repwd");
+			site.ajaxSubmit('<?php echo site_url("/register.php")?>', data, function(res){
+				Act.registerSymbol=0;
+				if(res.code==100){
 					window.location.href=res.returnUrl;
-				}else{
-					site.confirm("提示信息",'用户名或密码错误，请重试...');
+				}else if(res.code==101){
+					site.confirm('提示',"验证码错误，请重新输入!");
+				}else if(res.code==102){
+					site.confirm('提示',"该用户名已经被注册，请重新输入注册名");
+					$("#name").focus();
+				}else if(res.code==103){
+					site.confirm('提示',"该email已经被注册，请重新输入email");
+					$("#email").focus();
+				}else if(res.code==199){
+					site.confirm('提示',"注册失败，请重试...");
 				}
 			});
 		}
 	},
 	validate:function(){
-		if(Act.loginSymbol==1){
+		if(Act.registerSymbol==1){
 			site.confirm("提示信息","正在提交数据，请稍后...");
 			return false;
 		}
 		var name = site.getValue("name");
 		var nameLength = name.length;	
 		if(nameLength<=0){
-			alert("请输入用户名");
+			alert("请输入注册用户名");
 			$("#name").focus();
 			return false;
-		}else if(nameLength>20 || nameLength<6){
-			alert("用户名不正确");
+		}else if(nameLength<6){
+			alert("注册用户名不能少于6个字符");
+			$("#name").focus();
+			return false;
+		}else if(nameLength>20){
+			alert("注册用户名不能超过20个字符");
+			return false;
+		}else if(!validate.isUserName(name)){
+			alert("注册用户名只能是数字,字母,中文");
 			return false;
 		}
 		var pwd = site.getValue("pwd");
-		var pwdLength=pwd.length;
+		pwdLength=pwd.length;
 		if(pwdLength<=0){
-			alert("请输入密码");
+			alert("请设置密码");
 			$("#pwd").focus();
 			return false;
-		}else if(pwdLength>16 || pwdLength<6){
-			alert("密码不正确");
+		}else if(pwdLength<6){
+			alert("密码不能少于6位");
+			return false;
+		}else if(pwdLength>16){
+			alert("密码不能超过16位");
 			return false;
 		}
+		var rePwd = site.getValue("repwd");
+		if(rePwd != pwd){
+			alert("两次密码输入不相同");
+			$("#repwd").focus();
+			return false;
+		}
+//		var captcha = site.getValue("captcha");
+//		var captchaLength = captcha.length;
+//		if(captchaLength<=0){
+//			alert("请输入验证码");
+//			$("#captcha").focus();
+//			return false;
+//		}else if(captchaLength!=6){
+//			alert("验证码不正确，请重新输入");
+//			$("#captcha").focus();
+//			return false;
+//		}
 		return true;
 	}
 }

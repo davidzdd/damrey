@@ -13,9 +13,8 @@
 
 			<div id="cont">
 				<div class="cont-item">
-					<h1 class="cont-hd">登陆</h1>
+					<h1 class="cont-hd">登录</h1>
 					<div class="cont-bd">
-						<form method="post" name="form" action="#">
 						<table class="login-table">
 							<tbody>
 								<tr>
@@ -24,7 +23,7 @@
 								</tr>
 								<tr>
 									<th>密码：</th>
-									<td><input type="password" name="upwd" class="txt" /></td>
+									<td><input id="pwd" name="pwd" type="password" class="txt" /></td>
 								</tr>
 								<tr>
 									<th></th>
@@ -39,7 +38,6 @@
 								</tr>
 							</tbody>
 						</table>
-						</form>
 					</div>
 						
 				</div>
@@ -50,6 +48,8 @@
 	</section>
 
 </div>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/site.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/ed.js"></script>
 <script type="text/javascript">
 <!--
 $(function(){

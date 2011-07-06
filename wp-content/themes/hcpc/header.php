@@ -15,6 +15,7 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 ?>
 </title>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jquery.js"></script>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -27,12 +28,13 @@
 		</div>
 
 		<div id="meta">
-			<?php if ( is_user_logged_in() ) : ?>
+			<?php $currentFrontUser = UserIdentity::getLogonUser()?>
+			<?php if ( $currentFrontUser && $currentFrontUser->id>0) {?>
 				
-				<a href="#">小白</a> <a href="<?php echo wp_logout_url(); ?>" title="logout">[退出]</a>
-			<?php else : ?>
-				<a href="<?php echo wp_login_url(); ?>" title="login">登陆</a> - <a href="<?php echo wp_login_url(); ?>" title="login">注册</a>
-			<?php endif; ?>
+				<a href="<?php echo site_url("/UCenter.php")?>"><?php echo $currentFrontUser->name?></a> <a href="<?php echo home_url("/logout.php")?>" title="logout">[退出]</a>
+			<?php }else{ ?>
+				<a href="<?php echo home_url("/login.php")?>" title="login">登录</a> - <a href="<?php echo home_url("/register.php")?>" title="login">注册</a>
+			<?php }?>
 		</div>
 		<!-- 站点导航 -->
 		<nav id="menu">

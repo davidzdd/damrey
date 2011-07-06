@@ -12,6 +12,8 @@
  * @var bool
  */
 define('WP_USE_THEMES', true);
+//add by mo at 2011-07-07
+session_start();
 
 /** Loads the WordPress Environment and Template */
 require('./wp-blog-header.php');
