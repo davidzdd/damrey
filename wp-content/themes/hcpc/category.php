@@ -34,15 +34,16 @@
 			<?php }else{?>
 				<div class="cont-item">
 					<div class="cont-bd">
-						<?php while ( have_posts() ) : the_post(); ?>
-						<article class="article">
-							<a href="<?php the_permalink()?>" title="<?php the_title(); ?>">
-								<h3><?php the_title()?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php the_title()?>"/></h3>
-							</a>
-							<p><?php echo mb_substr($post->post_content,0,100).'... ...'?></p>
-							<a href="<?php the_permalink()?>" class="view-all">查看详细</a>
-						</article>
-						<?php endwhile; ?>
+						<?php $posts = get_posts( array( 'category' => $curCat->term_id ))?>
+						<?php foreach($posts as $post){?>
+							<article class="article">
+								<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
+									<h3><?php echo $post->post_title?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php echo $post->post_title?>"/></h3>
+								</a>
+								<p><?php echo mb_substr($post->post_content,0,100).'... ...'?></p>
+								<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
+							</article>
+						<?php }?>
 					</div>
 				</div>
 			<?php }?>
