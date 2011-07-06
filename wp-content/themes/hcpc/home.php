@@ -1,6 +1,6 @@
 <?php get_header(); ?>
  
-	<section id="index-main">
+	<section id="index-main" style="background:url(<?php bloginfo( 'template_url' ); ?>/images/index_big.jpg) no-repeat;">
 		<!-- 数字滚动 -->
 		<?php echo get_post($dummy_id=5)->post_content;?>
 		<!-- 指示牌 -->
@@ -33,7 +33,6 @@
 				<?php $post_4 = get_post($dummy_id=4);?>
 				<div class="intro-hd">
 					<h2><em><?php echo $post_4->post_title?></em></h2>
-					<a href="#">更多</a>
 				</div>
 				<ul class="intro-bd">
 					<?php echo $post_4->post_content?>
