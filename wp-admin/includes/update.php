@@ -113,8 +113,9 @@ function core_update_footer( $msg = '' ) {
 	break;
 	}
 }
+/* by mo at 2011-07-07
 add_filter( 'update_footer', 'core_update_footer' );
-
+*/
 function update_nag() {
 	if ( is_multisite() && !current_user_can('update_core') )
 		return false;
@@ -136,7 +137,9 @@ function update_nag() {
 	}
 	echo "<div class='update-nag'>$msg</div>";
 }
+/* by mo at 2011-07-07
 add_action( 'admin_notices', 'update_nag', 3 );
+*/
 
 // Called directly from dashboard
 function update_right_now_message() {
@@ -180,8 +183,9 @@ function wp_plugin_update_rows() {
 		}
 	}
 }
+/* by mo at 2011-07-07
 add_action( 'admin_init', 'wp_plugin_update_rows' );
-
+*/
 function wp_plugin_update_row( $file, $plugin_data ) {
 	$current = get_site_transient( 'update_plugins' );
 	if ( !isset( $current->response[ $file ] ) )
@@ -258,8 +262,9 @@ function wp_theme_update_rows() {
 		}
 	}
 }
+/* by mo at 2011-07-07
 add_action( 'admin_init', 'wp_theme_update_rows' );
-
+*/
 function wp_theme_update_row( $theme_key, $theme ) {
 	$current = get_site_transient( 'update_themes' );
 	if ( !isset( $current->response[ $theme_key ] ) )
@@ -307,6 +312,8 @@ function maintenance_nag() {
 
 	echo "<div class='update-nag'>$msg</div>";
 }
+/* by mo at 2011-07-07
 add_action( 'admin_notices', 'maintenance_nag' );
+*/
 
 ?>

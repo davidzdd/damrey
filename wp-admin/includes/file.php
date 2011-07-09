@@ -360,7 +360,12 @@ function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 	$filename = wp_unique_filename( $uploads['path'], $file['name'], $unique_filename_callback );
 
 	// Move the file to the uploads dir
+	/*START by mo at 2011-07-09 中文乱码问题解决：使用下2行（${nowline}+3）代码替换
 	$new_file = $uploads['path'] . "/$filename";
+	*/
+	$new_file = $uploads['path'] . "/" . iconv("UTF-8","GB2312",$filename);
+	$return_new_file = $uploads['path'] . "/$filename";    
+	/*END by mo at 2011-07-09*/
 	if ( false === @ move_uploaded_file( $file['tmp_name'], $new_file ) )
 		return $upload_error_handler( $file, sprintf( __('The uploaded file could not be moved to %s.' ), $uploads['path'] ) );
 
@@ -374,8 +379,11 @@ function wp_handle_upload( &$file, $overrides = false, $time = null ) {
 
 	if ( is_multisite() )
 		delete_transient( 'dirsize_cache' );
-
+	/*START by mo at 2011-07-09 中文乱码问题解决：使用下1行（${nowline}+3）代码替换
 	return apply_filters( 'wp_handle_upload', array( 'file' => $new_file, 'url' => $url, 'type' => $type ), 'upload' );
+	*/
+	return apply_filters( 'wp_handle_upload', array( 'file' => $return_new_file, 'url' => $url, 'type' => $type ), 'upload' );
+	/*END by mo at 2011-07-09*/
 }
 
 /**

@@ -29,6 +29,7 @@ if ( is_user_admin() )
 else
 	add_screen_option('layout_columns', array('max' => 4, 'default' => 2) );
 
+/* by mo at 2011-07-07
 add_contextual_help($current_screen,
 
 	'<p>' . __( 'Welcome to your WordPress Dashboard! You will find helpful tips in the Help tab of each screen to assist you as you get to know the application.' ) . '</p>' .
@@ -48,7 +49,7 @@ add_contextual_help($current_screen,
 	'<p>' . __( '<a href="http://codex.wordpress.org/Dashboard_SubPanel" target="_blank">Documentation on Dashboard</a>' ) . '</p>' .
 	'<p>' . __( '<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
 );
-
+*/
 include (ABSPATH . 'wp-admin/admin-header.php');
 
 $today = current_time('mysql', 1);
