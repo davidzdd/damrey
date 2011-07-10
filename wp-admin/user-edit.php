@@ -182,7 +182,7 @@ include (ABSPATH . 'wp-admin/admin-header.php');
 <input type="hidden" name="from" value="profile" />
 <input type="hidden" name="checkuser_id" value="<?php echo $user_ID ?>" />
 </p>
-
+<!-- START delete by mo 去掉个人选项
 <h3><?php _e('Personal Options'); ?></h3>
 
 <table class="form-table">
@@ -222,7 +222,7 @@ if ( !( IS_PROFILE_PAGE && !$user_can_edit ) ) : ?>
 	if ( IS_PROFILE_PAGE )
 		do_action('profile_personal_options', $profileuser);
 ?>
-
+END delete by mo 去掉个人选项-->
 <h3><?php _e('Name') ?></h3>
 
 <table class="form-table">
@@ -308,7 +308,7 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 	</td>
 </tr>
 </table>
-
+<!-- START delete by mo 去掉【联系信息】
 <h3><?php _e('Contact Info') ?></h3>
 
 <table class="form-table">
@@ -341,16 +341,20 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 	}
 ?>
 </table>
+END delete by mo 去掉【联系信息】-->
+<!-- add by mo at 2011-07-10 避免【联系信息】去不去掉后email是个必填项 -->
+<input type="hidden" name="email" id="email" value="<?php echo esc_attr($profileuser->user_email) ?>" class="regular-text" />
 
 <h3><?php IS_PROFILE_PAGE ? _e('About Yourself') : _e('About the user'); ?></h3>
 
 <table class="form-table">
+<!-- START delete by mo 去掉【个人说明】
 <tr>
 	<th><label for="description"><?php _e('Biographical Info'); ?></label></th>
 	<td><textarea name="description" id="description" rows="5" cols="30"><?php echo $profileuser->description; // textarea_escaped ?></textarea><br />
 	<span class="description"><?php _e('Share a little biographical information to fill out your profile. This may be shown publicly.'); ?></span></td>
 </tr>
-
+END delete by mo 去掉【个人说明】-->
 <?php
 $show_password_fields = apply_filters('show_password_fields', true, $profileuser);
 if ( $show_password_fields ) :

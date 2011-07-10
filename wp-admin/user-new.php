@@ -300,10 +300,12 @@ foreach ( array( 'user_login' => 'login', 'first_name' => 'firstname', 'last_nam
 		<th scope="row"><label for="last_name"><?php _e('Last Name') ?> </label></th>
 		<td><input name="last_name" type="text" id="last_name" value="<?php echo esc_attr($new_user_lastname); ?>" /></td>
 	</tr>
+	<!-- delete by mo at 2011-07-10 【网站url】checkbox选项
 	<tr class="form-field">
 		<th scope="row"><label for="url"><?php _e('Website') ?></label></th>
 		<td><input name="url" type="text" id="url" class="code" value="<?php echo esc_attr($new_user_uri); ?>" /></td>
 	</tr>
+	-->
 <?php if ( apply_filters('show_password_fields', true) ) : ?>
 	<tr class="form-field form-required">
 		<th scope="row"><label for="pass1"><?php _e('Password'); ?> <span class="description"><?php /* translators: password input field */_e('(twice, required)'); ?></span></label></th>
@@ -315,20 +317,25 @@ foreach ( array( 'user_login' => 'login', 'first_name' => 'firstname', 'last_nam
 		<p class="description indicator-hint"><?php _e('Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).'); ?></p>
 		</td>
 	</tr>
+	<!-- delete by mo at 2011-07-10 【发送密码？】checkbox选项
 	<tr>
 		<th scope="row"><label for="send_password"><?php _e('Send Password?') ?></label></th>
 		<td><label for="send_password"><input type="checkbox" name="send_password" id="send_password" <?php checked( $new_user_send_password ); ?> /> <?php _e('Send this password to the new user by email.'); ?></label></td>
 	</tr>
+	-->
 <?php endif; ?>
 <?php } // !is_multisite ?>
 	<tr class="form-field">
 		<th scope="row"><label for="role"><?php _e('Role'); ?></label></th>
 		<td><select name="role" id="role">
+			<!-- delete by mo at 2011-07-10 去掉【角色】多选项，写死：只有一个“管理员” 
 			<?php
 			if ( !$new_user_role )
 				$new_user_role = !empty($current_role) ? $current_role : get_option('default_role');
 			wp_dropdown_roles($new_user_role);
 			?>
+			-->
+			<option value="administrator">管理员</option>
 			</select>
 		</td>
 	</tr>

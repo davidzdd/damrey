@@ -249,7 +249,26 @@ $compat = array(
 	'options-general' => 'settings',
 	'themes' => 'appearance',
 	);
-
+/**
+ * add by mo at 2011-07-10 去掉暂时不用的左侧导航
+ * line 256~268
+ */
+unset($menu[2]);//控制面板
+unset($menu[25]);//评论
+unset($menu[60]);//外观
+unset($menu[65]);//插件
+//unset($menu[70]);//用户
+unset($menu[75]);//工具
+//unset($menu[80]);//设置
+unset($submenu['options-general.php'][15]);//设置->撰写
+unset($submenu['options-general.php'][20]);//设置->阅读
+unset($submenu['options-general.php'][25]);//设置->讨论
+unset($submenu['options-general.php'][35]);//设置->隐私
+unset($submenu['options-general.php'][40]);//设置->固定连接
+unset($submenu['options-general.php'][15]);//设置->撰写
 require_once(ABSPATH . 'wp-admin/includes/menu.php');
-
+/**
+ * add by mo at 2011-07-10 去掉暂时不用的左侧导航
+ */
+unset($submenu['options-general.php'][41]);//设置->中文本地化
 ?>
