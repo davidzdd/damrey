@@ -5,7 +5,7 @@ Author:copyright
 Version:1.0
 Tags:copyright theme
 */
-
+  
 /* reset */
 html,body,address,blockquote,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,bdo,big,br,cite,code,dfn,em,i,img,kbd,q,samp,small,span,strong,sub,sup,tt,var,legend,fieldset {margin:0;padding:0;}img,fieldset {border:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
 a, a:visited {color:#666;text-decoration:none;}
@@ -134,8 +134,8 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 				.login-table th, .login-table td {padding:15px;border:1px solid #CDE6F9;}
 				.login-table th {width:115px;background:#EBF3F7;text-align:right;font-weight:400;}
 				.login-table .btn th, .login-table .btn td {background:none;border:0 none;}
-				.login-table .submit {cursor:pointer;margin:0 5px 0 0;padding:0;width:55px;height:30px;background:url(images/bg_others.png) no-repeat 0 -231px;color:#FFF;border:0 none;font:700 14px/30px simsun;}
-				.login-table .submit:hover {text-decoration:underline;}
+				.submit {cursor:pointer;margin:0 5px 0 0;padding:0;width:55px;height:30px;background:url(images/bg_others.png) no-repeat 0 -231px;color:#FFF;border:0 none;font:700 14px/30px simsun;}
+				.submit:hover {text-decoration:underline;}
 				.login-table .btn a {font-weight:700;}
 			.reg-table th, .reg-table td {padding:10px;}
 			.reg-table .reg-tip {font:400 12px/18px simsun;}
@@ -186,3 +186,10 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 		.confirm-wrap h5 {height:27px;text-indent:10px;font:800 12px/27px "Microsoft YaHei";color:#FFF;background:#2477B1;}
 		.confirm-close {float:right;margin:-20px 7px 0 0;padding-top:13px;width:13px;height:0;background:url(../images/main.png) no-repeat -638px 1px;overflow:hidden;}
 		.confirm-msg {background:#FFF;}
+		.tips-btn {padding:5px 0;text-align:center;}
+		.tips-btn .inp_sm, .tips-btn .inp_esc {margin:0 5px;}
+		.inp_sm, .inp_esc {background: url(images/pop_btn.png) no-repeat;border:0 none;display:inline-block;_display:inline;_zoom:1;height:24px;overflow:hidden;vertical-align: middle;width:50px;}
+		.inp_esc {background-position: 0 -34px;}
+		.inp_sm a, .inp_esc a {display: block;height: 22px;line-height: 21px;margin: 1px;text-align: center;width: 50px;}
+		.inp_sm a, .inp_sm a:visited, .inp_sm a:hover {color:#FFF;text-decoration: none;}
+		.inp_esc a, .inp_esc a:visited, .inp_esc a:hover {color:#666;text-decoration: none;}
