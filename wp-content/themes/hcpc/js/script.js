@@ -8,19 +8,22 @@ $(function(){
 		_btn = $("#scroll-btn"),
 		_prev = $("#scroll-prev"),
 		_next = $("#scroll-next"),
-		t;
+		t,int = 0;
 
 	_list.width(_width);
 
 	function indexScroll(way) {
+		if (int === 1) return false;
 		if (way) {
-			_list.find("li:last").width(0).prependTo(_list).animate({"width": _iwid }, 800);
+			_list.find("li:last").width(0).prependTo(_list).animate({"width": _iwid }, 800, function(){
+				int = 0;
+			});
 		} else {
 			_list.find("li:first").animate({"width": 0 }, 800, function(){
 				$(this).appendTo(_list).width(_iwid);
+				int = 0;
 			});
 		}
-		
 	}
 
 	if ( _num > 4) {
@@ -56,10 +59,12 @@ $(function(){
 
 		_prev.click(function(){
 			indexScroll();
+			int = 1;
 		})
 
 		_next.click(function(){
 			indexScroll("right");
+			int = 1;
 		})
 	} else {
 		_list.css("margin-left",0);

@@ -16,6 +16,6 @@
 	</div>
 </footer>
 
-<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/script.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/script.js"></script>
 </body> 
 </html>

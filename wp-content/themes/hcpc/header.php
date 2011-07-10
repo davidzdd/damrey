@@ -15,7 +15,7 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 ?>
 </title>
-<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/jquery.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/jquery.js"></script>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
