@@ -15,8 +15,8 @@
 					<a href="javascript:;" id="scroll-prev">上一个</a>
 					<a href="javascript:;" id="scroll-next">下一个</a>
 				</p>
-			</div>
-			<p class="sort-ft"></p>
+				<p class="sort-ft"></p>
+			</div>			
 		</div>
 
 		<div id="intro">
