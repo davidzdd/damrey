@@ -27,7 +27,7 @@
 								</tr>
 								<tr>
 									<th></th>
-									<td><label><input type="checkbox" id="remember" name="remember" value="" /> 下次自动登录</label></td>
+									<td><label><input id="remember" name="remember" type="checkbox" value="" /> 下次自动登录</label></td>
 								</tr>
 								<tr class="btn">
 									<th></th>
@@ -46,7 +46,6 @@
 		</div>
 
 	</section>
-
 </div>
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/site.js"></script>
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/ed.js"></script>
@@ -65,11 +64,11 @@ var Act = {
 	login:function(id){
 		if(Act.validate()){
 			var remember = 0;
-			if($("#remember").attr("checked")==true){
+			if($("input[name=remember]:checked").length){
 				remember = 1;
 			}	
 			Act.loginSymbol=1;
-			var data = 'name='+site.getValue("name")+"&pwd="+site.getValue("pwd")+"&remember="+remember;
+			var data = 'name='+site.getValue("name")+"&pwd="+site.getValue("pwd")+"&remember="+1;
 			site.ajaxSubmit('<?php echo site_url('login.php');?>', data, function(res){
 				Act.loginSymbol=0;
 				if(res.symbol==true){

@@ -27,9 +27,25 @@
 					</div>
 					
 					<div class="cont-bd article">
-
+						<!-- 文章内容 -->
 						<?php echo $curPost->post_content ?>
-							
+						
+						<?php $attachments = get_children( array('post_parent'=>$curPost->ID,'post_type=attachment','order'=> 'ASC', 'orderby' => 'post_date'))?>
+						<?php if($attachments){?>
+							<!-- 附件内容 -->
+							<table class="atc-table">
+								<tbody>
+									<tr>
+										<th>材料下载</th>
+									</tr>
+									<?php $i=1;foreach ($attachments as $att){?>
+										<tr>
+											<td>附件<?php echo $i?>：<a href="<?php echo wp_get_attachment_url($att->ID)?>" target="_blank" title="<?php echo $att->post_excerpt?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/attachment.gif" alt="<?php echo $att->post_excerpt?>" /><?php echo esc_html( basename( $att->guid ))?></a></td>
+										</tr>
+									<?php $i++;}?>
+								</tbody>
+						    </table>	
+					    <?php }?>
 					</div>	
 						
 				</article>

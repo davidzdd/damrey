@@ -34,7 +34,6 @@ class UserIdentity {
 				//uid设置到session中
 				$_SESSION [self::SESSION_LOGIN_SYMBOL] = $user->id;
 				if ($remember) {
-					var_dump($remember);
 					//30天过期
 					setcookie(self::COOKIE_AUTH_ID, $user->key, time()+ self::COOKIE_AUTH_EXPIRETIME, "/");
 				}
@@ -55,7 +54,7 @@ class UserIdentity {
 		} else {
 			$authKey = $_COOKIE [self::COOKIE_AUTH_ID];
 			if ($authKey) {
-				$logonUser = $wpdb->get_row($wpdb->prepare("SELECT * FROM user WHERE key=%s limit 1", array($authKey->value)));
+				$logonUser = $wpdb->get_row($wpdb->prepare("SELECT * FROM user WHERE `key`=%s limit 1", $authKey));
 				if ($logonUser) {
 					//uid设置到session中
 					$_SESSION [self::SESSION_LOGIN_SYMBOL] = $logonUser->id;
