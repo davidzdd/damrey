@@ -131,8 +131,10 @@ if ( function_exists('mb_strlen') ) {
 		$title_class = 'class="long-title"';
 }
 ?>
-
+<!--by mo at 2011-07-10 后台logo更改
 <img id="header-logo" src="<?php echo esc_url( includes_url( 'images/blank.gif' ) ); ?>" alt="" width="32" height="32" />
+-->
+<img id="header-logo" src="<?php echo esc_url( get_bloginfo( "template_url", 'display' ).'/images/sublogo.jpg'  ); ?>" alt="" width="32" height="32" />
 <h1 id="site-heading" <?php echo $title_class ?>>
 	<a href="<?php echo trailingslashit( get_bloginfo( 'url' ) ); ?>" title="<?php esc_attr_e('Visit Site') ?>">
 		<span id="site-title"><?php echo $blog_name ?></span>

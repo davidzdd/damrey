@@ -92,7 +92,10 @@ include('./admin-header.php');
 </tr>
 <?php if ( !is_multisite() ) { ?>
 <tr valign="top">
+<!--replace by line98 by mo at 2011-07-10 中文地址更改（暂且解决办法=>需找到语言包）
 <th scope="row"><label for="siteurl"><?php _e('WordPress address (URL)') ?></label></th>
+-->
+<th scope="row"><label for="siteurl"><?php _e('HCPC 地址 (URL)') ?></label></th>
 <td><input name="siteurl" type="text" id="siteurl" value="<?php form_option('siteurl'); ?>"<?php disabled( defined( 'WP_SITEURL' ) ); ?> class="regular-text code<?php if ( defined( 'WP_SITEURL' ) ) echo ' disabled' ?>" /></td>
 </tr>
 <tr valign="top">
@@ -105,6 +108,7 @@ include('./admin-header.php');
 <td><input name="admin_email" type="text" id="admin_email" value="<?php form_option('admin_email'); ?>" class="regular-text" />
 <span class="description"><?php _e('This address is used for admin purposes, like new user notification.') ?></span></td>
 </tr>
+<!-- delete by mo at 2011-07-10 成员资格
 <tr valign="top">
 <th scope="row"><?php _e('Membership') ?></th>
 <td> <fieldset><legend class="screen-reader-text"><span><?php _e('Membership') ?></span></legend><label for="users_can_register">
@@ -112,12 +116,15 @@ include('./admin-header.php');
 <?php _e('Anyone can register') ?></label>
 </fieldset></td>
 </tr>
+-->
+<!-- delete by mo at 2011-07-10 默认用户角色
 <tr valign="top">
 <th scope="row"><label for="default_role"><?php _e('New User Default Role') ?></label></th>
 <td>
 <select name="default_role" id="default_role"><?php wp_dropdown_roles( get_option('default_role') ); ?></select>
 </td>
 </tr>
+-->
 <?php } else { ?>
 <tr valign="top">
 <th scope="row"><label for="new_admin_email"><?php _e('E-mail address') ?> </label></th>
