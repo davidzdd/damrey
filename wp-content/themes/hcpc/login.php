@@ -32,7 +32,7 @@
 								<tr class="btn">
 									<th></th>
 									<td>
-										<input id="loginButton"  name="loginButton" type="button" class="submit" value="登陆"/>
+										<input id="loginButton"  name="loginButton" type="button" class="submit" value="登录"/>
 										<span class="l2">还没有帐号，<a href="<?php echo site_url("register.php")?>">立即注册</a></span>
 									</td>
 								</tr>
