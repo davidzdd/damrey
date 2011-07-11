@@ -8,7 +8,7 @@ $(function(){
 		_btn = $("#scroll-btn"),
 		_prev = $("#scroll-prev"),
 		_next = $("#scroll-next"),
-		t,int = 0;
+		int = 0;
 
 	_list.width(_width);
 
@@ -28,27 +28,18 @@ $(function(){
 
 	if ( _num > 4) {
 
-		//×Ô¶¯¹ö
-		t = setInterval(function(){
-			indexScroll();
-		}, 3000);
+		var S = setInterval(function(){indexScroll()}, 3000);
 
-		//hover
 		_list.find("li").hover(function(){
-			clearInterval(t);
+			clearInterval(S);
 		},function(){
-			t = setInterval(function(){
-				indexScroll();
-			}, 3000);
+			S = setInterval(function(){indexScroll()}, 3000);
 		})
 
-		//°´Å¥
 		_btn.find("a").hover(function(){
-			clearInterval(t);
+			clearInterval(S);
 		},function(){
-			t = setInterval(function(){
-				indexScroll();
-			}, 3000);
+			S = setInterval(function(){indexScroll()}, 3000);
 		})
 
 		_obj.hover(function(){
