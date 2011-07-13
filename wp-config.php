@@ -21,7 +21,7 @@ define('DB_NAME', 'damrey');
 define('DB_USER', 'root');
 
 /** MySQL 数据库密码 */
-define('DB_PASSWORD', 'softdons');
+define('DB_PASSWORD', '');
 
 /** MySQL 主机 */
 define('DB_HOST', 'localhost');
