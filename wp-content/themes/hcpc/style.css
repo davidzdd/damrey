@@ -62,7 +62,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 
 	#sort {position:relative;width:980px;height:230px;overflow:hidden;}
 		#sort .sort-bd {margin-left:-210px;width:9999px;}
-		.sort-bd li {float:left;margin-top:10px;width:210px;height:217px;background:url(images/sort_bg.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg.png',sizingMethod="scale");overflow:hidden;}
+		.sort-bd li {float:left;margin-top:10px;width:210px;height:217px;background:url(images/sort_bg.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg.png',sizingMethod='scale');overflow:hidden;}
 			.sort-bd h2 {margin-left:5px;padding-bottom:68px;height:42px;width:200px;border-top:5px solid;font:400 18px/42px "Microsoft Yahei";text-indent:15px;}
 			.c1 h2 {border-color:#F23380;}
 			.c2 h2 {border-color:#22A0CC;}
@@ -76,7 +76,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 		#scroll-btn {display:none;}
 			#scroll-btn a {display:block;position:absolute;top:90px;left:15px;padding-top:55px;width:21px;height:0;background:url(images/bg_others.png) no-repeat 0 -295px;z-index:9;overflow:hidden;}
 			#scroll-btn #scroll-next {left:auto;right:15px;background-position:-21px -295px;}
-		#sort .sort-ft {position:absolute;top:10px;right:0;width:100px;height:220px;background:url(images/sort_cover.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_cover.png',sizingMethod="scale");overflow:hidden;pointer-events:none;}
+		#sort .sort-ft {position:absolute;top:10px;right:0;width:100px;height:220px;background:url(images/sort_cover.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_cover.png',sizingMethod='scale');overflow:hidden;pointer-events:none;}
 		.scroll-hover #scroll-btn {display:block;}
 
 	#intro {width:980px;}
