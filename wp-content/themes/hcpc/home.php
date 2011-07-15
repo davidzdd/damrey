@@ -37,7 +37,11 @@
 					<a href="javascript:;" id="scroll-prev">上一个</a>
 					<a href="javascript:;" id="scroll-next">下一个</a>
 				</p>
-				<p class="sort-ft"></p>
+				<p class="sort-ft">
+					<!--[if IE 6]>
+					<embed src="<?php bloginfo( 'template_url' ); ?>/images/sort_cover.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" width="100" height="220"></embed>
+					<![endif]-->
+				</p>
 			</div>			
 		</div>
 
