@@ -129,10 +129,6 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 				.cont-bd .article h3 {font:400 16px/24px "Microsoft Yahei";height:30px;}
 					.cont-bd h3 img {position:absolute;top:15px;left:0;width:120px;height:90px;-webkit-border-radius:5px;border-radius:5px;}
 				.cont-bd .article .view-all, .cont-bd .article .view-all:visited, .cont-bd .article .view-all:hover {margin-top:5px;width:80px;height:25px;line-height:25px;color:#FFF;background:url(images/bg_others.png) no-repeat 0 -168px;text-align:center;letter-spacing:1px;}
-				.cont-bd .article ul {list-style-type:disc;padding-left:30px;}
-				.cont-bd .article ol {list-style-type:decimal;padding-left:30px;}
-				.cont-bd .article ol ul, .cont-bd .article ul ul {list-style-type: square;}
-				.cont-bd .article i, .cont-bd .article em {font-style:italic;}
 
 			.login-table {margin-top:10px;width:700px;font-size:14px;}
 				.login-table th, .login-table td {padding:15px;border:1px solid #CDE6F9;}
@@ -155,6 +151,11 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 			#article .cont-hd {margin-bottom:10px;height:58px;border-bottom-width:1px;}
 			#article .cont-hd h1 {display:inline;font:400 22px/56px "Microsoft Yahei";color:#0080cc;}
 			#article .cont-hd span {font:400 12px/18px "Microsoft Yahei";}
+			#article .article ul {list-style-type:disc;padding-left:30px;}
+				#article .article ol {list-style-type:decimal;padding-left:30px;}
+				#article .article ol ul, #article .article ul ul {list-style-type: square;}
+				#article .article i, #article .article em {font-style:italic;}
+				#article .article p {margin:5px 0;}
 
 			.atc-table {margin-top:15px;width:775px;border:1px solid #CCC;}
 				.atc-table th {padding:0 15px;height:46px;line-height:46px;text-align:left;background:#EBF3F7;color:#0080cc;font:400 18px/46px "Microsoft Yahei";}
