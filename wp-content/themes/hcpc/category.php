@@ -14,7 +14,11 @@
 			</div>
 			<div id="cont">
 			<?php if(is_category() && !is_wp_error($childCatArr) && count($childCatArr)>0){?>
-				<?php foreach ($childCatArr as $childCat){?>
+				<?php foreach ($childCatArr as $childCat){
+					if($childCat->term_id == 38){
+						continue;
+					}
+				?>
 				<div class="cont-item">
 					<h1 class="cont-hd"><a href="<?php echo get_category_link($childCat->term_id)?>"><?php echo $childCat->name?></a></h1>
 					<div class="cont-bd">
