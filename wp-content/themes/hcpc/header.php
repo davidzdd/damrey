@@ -41,7 +41,7 @@
 			<ul>
 				<?php 
 					$nav = get_post($dummy_id=7)->post_content;
-					echo preg_replace_callback('/(\${catid=(\d)})/', "getListByCatId", $nav);
+					echo preg_replace_callback('/(\${catid=(\d+)})/', "getListByCatId", $nav);
 					
 					function getListByCatId($matcher){
 						$catId = $matcher[2];

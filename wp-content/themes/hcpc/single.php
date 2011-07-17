@@ -28,7 +28,7 @@
 					
 					<div class="cont-bd article">
 						<!-- 文章内容 -->
-						<?php echo $curPost->post_content ?>
+						<?php echo str_replace(']]>', ']]&gt;', apply_filters('the_content', $curPost->post_content)); ?>
 						
 						<?php $attachments = get_children( array('post_parent'=>$curPost->ID,'post_type=attachment','order'=> 'ASC', 'orderby' => 'post_date'))?>
 						<?php if($attachments){?>
