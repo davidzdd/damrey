@@ -7,7 +7,7 @@ Tags:copyright theme
 */
   
 /* reset */
-html,body,address,blockquote,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,bdo,big,br,cite,code,dfn,em,i,img,kbd,q,samp,small,span,strong,sub,sup,tt,var,legend,fieldset {margin:0;padding:0;}img,fieldset {border:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+html,body,address,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,bdo,big,br,cite,code,dfn,em,i,img,kbd,q,samp,small,span,strong,sub,sup,tt,var,legend,fieldset {margin:0;padding:0;}img,fieldset {border:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
 a, a:visited {color:#666;text-decoration:none;}
 a:hover {color:#0080cc;text-decoration:underline;}
 em,i {font-style:normal;}
@@ -151,11 +151,12 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 			#article .cont-hd {margin-bottom:10px;height:58px;border-bottom-width:1px;}
 			#article .cont-hd h1 {display:inline;font:400 22px/56px "Microsoft Yahei";color:#0080cc;}
 			#article .cont-hd span {font:400 12px/18px "Microsoft Yahei";}
-			#article .article ul {list-style-type:disc;padding-left:30px;}
-				#article .article ol {list-style-type:decimal;padding-left:30px;}
+				#article .article ul {padding:15px 0 15px 35px;list-style-type:disc;padding-left:30px;}
+				#article .article ol {padding:15px 0 15px 35px;list-style-type:decimal;padding-left:30px;}
 				#article .article ol ul, #article .article ul ul {list-style-type: square;}
 				#article .article i, #article .article em {font-style:italic;}
-				#article .article p {margin:5px 0;}
+				#article .article p {margin-bottom:10px;}
+				#article .article del {color:red;text-decoration:line-through;}
 
 			.atc-table {margin-top:15px;width:775px;border:1px solid #CCC;}
 				.atc-table th {padding:0 15px;height:46px;line-height:46px;text-align:left;background:#EBF3F7;color:#0080cc;font:400 18px/46px "Microsoft Yahei";}
