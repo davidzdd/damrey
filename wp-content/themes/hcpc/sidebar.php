@@ -11,7 +11,7 @@
 	    	$curQueryObj = $curCatArr[0];
 	    	$catName = $curQueryObj->name;
 		}
-		$childCatArr = get_terms('category',"child_of={$curQueryObj->term_id}&hierarchical=0&hide_empty=0");
+		$childCatArr = get_terms('category',"child_of={$curQueryObj->term_id}&hierarchical=0&hide_empty=0&orderby=slug&order=ASC");
 	?>
 	<div class="subitem sub-nav">
 		<h2 class="sub-hd"><?php echo $catName?></h2>
@@ -21,7 +21,7 @@
 				<li <?php if($curQueryObj->term_id == $childCat->term_id){?>class="cur"<?php }?>><a href="<?php echo get_category_link($childCat);?>"><?php echo $childCat->name?></a></li>
 			<?php }?>
 		<?php }else{?>
-			<?php $postAll = get_posts( array( 'category' => $curQueryObj->term_id ))?>
+			<?php $postAll = get_posts( array( 'category' => $curQueryObj->term_id, 'orderby'=>'ID', 'order'=>'ASC'))?>
 			<?php foreach($postAll as $post){?>
 				<li <?php if($curPost->ID == $post->ID){?>class="cur"<?php }?>><a href="<?php echo get_permalink($post);?>"><?php echo $post->post_title?></a></li>
 			<?php }?>
