@@ -51,7 +51,11 @@
 						$childCatArr = get_terms('category',"child_of={$cat->term_id}&hierarchical=0&hide_empty=0&orderby=slug&order=ASC");
 						if(!is_wp_error($childCatArr) && count($childCatArr)>0){
 							foreach ($childCatArr as $childCat){
-								$url = get_category_link($childCat);
+								if($childCat->term_id == 38){
+									$url = "http://www.bqba.com.cn/hcpc/hcpc/index.php?r=work/register";
+								}else{
+									$url = get_category_link($childCat);
+								}
 								$realHtml .= "<a href='{$url}'>{$childCat->name}</a>";
 							}
 						}else{
