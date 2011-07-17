@@ -13,6 +13,10 @@
  		}
  	?>
 	<section id="index-main" style="background:url(<?php echo $indexUrl?>) no-repeat;">
+
+		<!-- 宣传语 -->
+		<div id="publicity">通过我们专业、权威、高效的服务，让您和您的企业</div>
+
 		<!-- 数字滚动 -->
 		<?php 
 			$content5 = get_post($dummy_id=5)->post_content;
@@ -25,9 +29,17 @@
 				return $totalCount;
 			}
 		?>
+
+		<!-- qq -->
+		<div id="qq">
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=7154929&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:7154929:42" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=7154929&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:7154929:47" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
+		</div>
+
 		<!-- 指示牌 -->
 		<?php echo get_post($dummy_id=6)->post_content;?>
 		<!-- 首页轮播 -->
+
 		<div id="sort">
 			<div id="scroll">
 				<ul class="sort-bd">
