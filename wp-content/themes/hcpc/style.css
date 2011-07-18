@@ -86,7 +86,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 		.scroll-hover #scroll-btn {display:block;}
 
 	#intro {width:980px;}
-		.intro-mod {float:left;margin-right:40px;width:410px;height:130px;line-height:22px;color:#666;overflow:hidden;}
+		.intro-mod {float:left;margin-right:40px;width:410px;height:190px;line-height:22px;color:#666;overflow:hidden;}
 			.intro-hd {margin-bottom:10px;width:100%;height:30px;line-height:30px;background-repeat:repeat-x;background-position:0 -144px;}
 				.intro-hd h2 {float:left;font:400 16px/30px "Microsoft Yahei";}
 				.intro-hd a {float:right;} 
