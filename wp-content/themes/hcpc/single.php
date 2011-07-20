@@ -40,7 +40,7 @@
 									</tr>
 									<?php $i=1;foreach ($attachments as $att){?>
 										<tr>
-											<td>附件<?php echo $i?>：<a href="<?php echo wp_get_attachment_url($att->ID)?>" target="_blank" title="<?php echo $att->post_excerpt?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/attachment.gif" alt="<?php echo $att->post_excerpt?>" /><?php echo esc_html( basename( $att->guid ))?></a></td>
+											<td><a href="<?php echo wp_get_attachment_url($att->ID)?>" target="_blank" title="<?php echo $att->post_excerpt?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/attachment.gif" alt="<?php echo $att->post_excerpt?>" /><?php echo esc_html( basename( $att->guid ))?></a></td>
 										</tr>
 									<?php $i++;}?>
 								</tbody>

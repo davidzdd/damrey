@@ -32,7 +32,7 @@
 
 		<!-- qq -->
 		<div id="qq">
-			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=7154929&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:7154929:42" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=7154929&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:7154929:47" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
 			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=7154929&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:7154929:47" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
 		</div>
 

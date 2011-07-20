@@ -28,7 +28,7 @@
 							<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
 								<h3><?php echo $post->post_title?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php echo $post->post_title?>"/></h3>
 							</a>
-							<p><?php echo mb_substr($post->post_content,0,100).'... ...'?></p>
+							<p><?php echo htmlspecialchars(mb_substr($post->post_content,0,100)).'... ...'?></p>
 							<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
 						</article>
 						<?php }?>
@@ -44,7 +44,7 @@
 								<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
 									<h3><?php echo $post->post_title?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php echo $post->post_title?>"/></h3>
 								</a>
-								<p><?php echo mb_substr($post->post_content,0,100).'... ...'?></p>
+								<p><?php echo htmlspecialchars(mb_substr($post->post_content,0,100)).'... ...'?></p>
 								<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
 							</article>
 						<?php }?>
