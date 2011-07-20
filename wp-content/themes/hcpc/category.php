@@ -26,13 +26,18 @@
 						<?php foreach($curPosts as $post){?>
 						<article class="article">
 							<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
-								<h3><?php echo $post->post_title?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php echo $post->post_title?>"/></h3>
+								<h3><?php echo $post->post_title?>
+								<img src="<?php if(is_single($post)){ echo get_bloginfo( 'template_url', 'display' )."/images/folder_logo.jpg";} else {echo get_bloginfo( 'template_url', 'display' )."/images/file_logo.png";}?>" alt="<?php echo $post->post_title?>"/>
+								</h3>
 							</a>
 							<p><?php echo htmlspecialchars(mb_substr($post->post_content,0,100)).'... ...'?></p>
 							<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
 						</article>
 						<?php }?>
 					</div>
+					<?php if(count($curPosts)==2){?>
+						<div class="cont-ft l2"><a href="<?php echo get_category_link($childCat->term_id)?>">查看更多</a></div>
+					<?php }?>
 				</div>
 				<?php }?>
 			<?php }else{?>
@@ -42,7 +47,9 @@
 						<?php foreach($posts as $post){?>
 							<article class="article">
 								<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
-									<h3><?php echo $post->post_title?><img src="http://t3.qpic.cn/mblogpic/fdec23190aee07bb3284/160" alt="<?php echo $post->post_title?>"/></h3>
+									<h3><?php echo $post->post_title?>
+									<img src="<?php if(is_single($post)){ echo get_bloginfo( 'template_url', 'display' )."/images/folder_logo.jpg";} else {echo get_bloginfo( 'template_url', 'display' )."/images/file_logo.png";}?>" alt="<?php echo $post->post_title?>"/>
+									</h3>
 								</a>
 								<p><?php echo htmlspecialchars(mb_substr($post->post_content,0,100)).'... ...'?></p>
 								<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
