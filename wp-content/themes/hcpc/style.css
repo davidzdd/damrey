@@ -134,7 +134,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 				.cont-bd .article a {display:inline-block;_display:inline;_zoom:1;}
 				.cont-bd .article h3 {font:400 16px/24px "Microsoft Yahei";height:30px;}
 					.cont-bd h3 img {position:absolute;top:15px;left:0;width:120px;height:90px;-webkit-border-radius:5px;border-radius:5px;}
-				.view-all, .view-all:visited, .view-all:hover {margin-top:5px;width:80px;height:25px;line-height:25px;color:#FFF;background:url(images/bg_others.png) no-repeat 0 -168px;text-align:center;letter-spacing:1px;}
+				.view-all, .view-all:visited, .view-all:hover {display:inline-block;_display:inline;_zoom:1;margin-top:5px;width:80px;height:25px;line-height:25px;color:#FFF;background:url(images/bg_others.png) no-repeat 0 -168px;text-align:center;letter-spacing:1px;}
 			.cont-ft {margin-top:5px;}
 
 			.login-table {margin-top:10px;width:700px;font-size:14px;}
