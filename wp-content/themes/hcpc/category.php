@@ -30,7 +30,7 @@
 								<img src="<?php if(is_single($post)){ echo get_bloginfo( 'template_url', 'display' )."/images/folder_logo.jpg";} else {echo get_bloginfo( 'template_url', 'display' )."/images/file_logo.png";}?>" alt="<?php echo $post->post_title?>"/>
 								</h3>
 							</a>
-							<p><?php echo htmlspecialchars(mb_substr($post->post_content,0,100)).'... ...'?></p>
+							<p><?php echo htmlspecialchars(mb_substr(strip_tags($post->post_content),0,100)).'... ...'?></p>
 							<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
 						</article>
 						<?php }?>
@@ -51,7 +51,7 @@
 									<img src="<?php if(is_single($post)){ echo get_bloginfo( 'template_url', 'display' )."/images/folder_logo.jpg";} else {echo get_bloginfo( 'template_url', 'display' )."/images/file_logo.png";}?>" alt="<?php echo $post->post_title?>"/>
 									</h3>
 								</a>
-								<p><?php echo htmlspecialchars(mb_substr($post->post_content,0,100)).'... ...'?></p>
+								<p><?php echo htmlspecialchars(mb_substr(strip_tags($post->post_content),0,100)).'... ...'?></p>
 								<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
 							</article>
 						<?php }?>
