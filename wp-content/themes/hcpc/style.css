@@ -8,7 +8,7 @@ Tags:copyright theme
   
 /* reset */
 html,body,address,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,bdo,big,br,cite,code,dfn,em,i,img,kbd,q,samp,small,span,strong,sub,sup,tt,var,legend,fieldset {margin:0;padding:0;}img,fieldset {border:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
-a, a:visited {color:#666;text-decoration:none;}
+a, a:visited {color:#333;text-decoration:none;}
 a:hover {color:#0080cc;text-decoration:underline;}
 em,i {font-style:normal;}
 li {list-style:none;}
@@ -26,10 +26,10 @@ table {border-collapse:collapse;}
 .select {position:relative;float:left;width:110px;line-height:20px;text-indent:10px;}
 	.select dt {cursor:pointer;}
 	.select dd {display:none;position:absolute;width:100%;border:1px solid #CBCBCB;background:#FFF;z-index:1;}
-		.select dd a, .select dd a:visited {display:block;height:20px;line-height:20px;color:#666;overflow:hidden;}
+		.select dd a, .select dd a:visited {display:block;height:20px;line-height:20px;color:#333;overflow:hidden;}
 		.select dd a:hover {text-decoration:none;color:#fff;background:#CBCBCB;}
 
-body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#FFF url(images/body_bg.jpg) repeat-x;}
+body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#333;background:#FFF url(images/body_bg.jpg) repeat-x;}
 .index {background:#FFF url(images/index_bg.jpg) repeat-x;}
 
 #menu li, #download a, .sort-bd p a, .intro-hd {background:url(images/icon.png) no-repeat;}
@@ -46,7 +46,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 		#menu a, #menu a:visited, #menu a:hover {float:left;color:#FFF;}
 		#menu .menu-drop {position:relative;float:left;height:40px;}
 			#menu .menu-drop dd {display:none;position:absolute;top:30px;left:0;padding:5px 10px;width:85px;background:#FFF;border-bottom:2px solid #197EBE;font-size:12px;line-height:20px;}
-			#menu .menu-drop dd a, #menu .menu-drop dd a:visited {color:#666;width:85px;height:20px;overflow:hidden;}
+			#menu .menu-drop dd a, #menu .menu-drop dd a:visited {color:#333;width:85px;height:20px;overflow:hidden;}
 			#menu .menu-drop dd a:hover {color:#0080CC;}
 
 #index-main {position:relative;padding-top:272px;height:422px;overflow:hidden;}
@@ -73,7 +73,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 		.sort-bd .c4 {background:url(images/sort_bg4.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg4.png',sizingMethod='scale');}
 		.sort-bd .c5 {background:url(images/sort_bg5.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg5.png',sizingMethod='scale');}
 			.sort-bd h2 {margin-left:5px;padding-bottom:68px;height:47px;width:200px;font:400 18px/47px "Microsoft Yahei";text-indent:15px;}
-			
+
 			.sort-bd h2 a, .sort-bd h2 a:visited {color:#d8d8da;}
 			.sort-bd p {padding:0 10px;width:190px;color:#999;}
 				.sort-bd p a, .sort-bd p a:visited {float:left;margin-top:5px;padding-right:15px;color:#999;background-position:right -108px;overflow:hidden;}
@@ -86,7 +86,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 		.scroll-hover #scroll-btn {display:block;}
 
 	#intro {width:980px;}
-		.intro-mod {float:left;margin-right:40px;width:410px;height:190px;line-height:22px;color:#666;overflow:hidden;}
+		.intro-mod {float:left;margin-right:40px;width:410px;height:190px;line-height:22px;color:#333;overflow:hidden;}
 			.intro-hd {margin-bottom:10px;width:100%;height:30px;line-height:30px;background-repeat:repeat-x;background-position:0 -144px;}
 				.intro-hd h2 {float:left;font:400 16px/30px "Microsoft Yahei";}
 				.intro-hd a {float:right;} 
@@ -117,15 +117,15 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 				.sub-nav li {width:100%;height:30px;line-height:30px;border-bottom:1px solid #E3E3E3;font-weight:700;text-align:center;overflow:hidden;}
 				.sub-nav li.cur {background:url(images/bg_others.png) no-repeat 0 -197px;}
 			.sub-nav .sub-ft {background-position:0 -44px;}
-			
+
 			.phone .sub-hd {background-position:0 -54px;}
-			.phone .sub-bd {padding:0 0 0 70px;width:107px;height:36px;line-height:18px;font-size:12px;color:#666;background:url(images/bg_others.png) no-repeat 15px -128px;}
+			.phone .sub-bd {padding:0 0 0 70px;width:107px;height:36px;line-height:18px;font-size:12px;color:#333;background:url(images/bg_others.png) no-repeat 15px -128px;}
 
 			.qq .sub-hd {background-position:0 -94px;color:#f67a1c;}
 			.qq .sub-bd {padding:0 15px;width:147px;}
 				.qq .sub-bd p {padding:5px 0;height:25px;overflow:hidden;}
 
-		
+
 		#nav {height:44px;line-height:50px;}
 		#cont {padding-top:10px;overflow:hidden;}
 			.cont-item {margin-bottom:10px;}
@@ -174,7 +174,7 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 #footer {margin-top:20px;padding-bottom:20px;border-top:1px solid #DDD;background:#F5F5F5;}
 #footer.index-footer {border:0 none;background:none;}
 	.footer-cont {margin:0 auto;width:980px;}
-	#copyright {float:left;padding:10px 0 0 90px;line-height:20px;color:#666;background:url(images/sublogo.jpg) no-repeat;}
+	#copyright {float:left;padding:10px 0 0 90px;line-height:20px;color:#333;background:url(images/sublogo.jpg) no-repeat;}
 	#friends {float:right;margin-top:25px;width:110px;height:20px;line-height:20px;background:url(images/friend_bg.jpg) no-repeat;}
 		#friends dt {cursor:pointer;color:#999;text-indent:10px;}
 
@@ -205,4 +205,4 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#666;background:#
 		.inp_esc {background-position: 0 -34px;}
 		.inp_sm a, .inp_esc a {display: block;height: 22px;line-height: 21px;margin: 1px;text-align: center;width: 50px;}
 		.inp_sm a, .inp_sm a:visited, .inp_sm a:hover {color:#FFF;text-decoration: none;}
-		.inp_esc a, .inp_esc a:visited, .inp_esc a:hover {color:#666;text-decoration: none;}
+		.inp_esc a, .inp_esc a:visited, .inp_esc a:hover {color:#333;text-decoration: none;}
