@@ -93,7 +93,12 @@ $(function(){
 	}
 
 	selectBox($(".select"), {replace:0});
-	selectBox($(".menu-drop"), {replace:0});
+
+	$(".menu-drop").hover(function(){
+		$(this).addClass("menu-drop-hover");
+	},function(){
+		$(this).removeClass("menu-drop-hover");
+	});
 
 	// scrollSlide
 	var _count = $("#count"),

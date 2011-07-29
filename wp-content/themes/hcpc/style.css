@@ -1,4 +1,4 @@
-/*
+ni /*
 Theme Name:copyright
 Description:copyright theme.
 Author:copyright
@@ -41,13 +41,18 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 		#meta a, #meta a:visited, #meta a:hover {color:#DDD;}
 	#menu {position:absolute;top:50px;right:-14px;}
 		#menu ul {font-size:14px;font-weight:700;line-height:26px;}
-		#menu li {float:left;margin-right:-1px;padding:0 15px;background-position:-59px 8px;}
+		#menu li {float:left;margin-right:-1px;padding:0 10px;background-position:-59px 8px;}
 		#menu li.home {background:none;}
-		#menu a, #menu a:visited, #menu a:hover {float:left;color:#FFF;}
+		#menu a, #menu a:visited {float:left;padding:0 5px;color:#FFF;}
+		#menu a:hover {color:#f79e4d;}
 		#menu .menu-drop {position:relative;float:left;height:40px;}
-			#menu .menu-drop dd {display:none;position:absolute;top:30px;left:0;padding:5px 10px;width:85px;background:#FFF;border-bottom:2px solid #197EBE;font-size:12px;line-height:20px;border:2px solid #779fc2;border-width:0 2px 2px 0;}
+			#menu .menu-drop dt {height:26px;overflow:hidden;}
+			#menu .menu-drop dd {display:none;position:absolute;top:26px;left:0;padding:5px 10px;width:85px;background:#FFF;border-bottom:2px solid #197EBE;font-size:12px;line-height:20px;border:2px solid #779fc2;border-width:0 2px 2px 0;}
 			#menu .menu-drop dd a, #menu .menu-drop dd a:visited {color:#666;width:85px;height:20px;overflow:hidden;}
 			#menu .menu-drop dd a:hover {color:#0080CC;}
+		#menu .menu-drop-hover dt a, #menu .menu-drop-hover dt a:visited, #menu .menu-drop-hover dt a:hover {background:#FFF;color:#0080cc;text-decoration:none;}
+		#menu .menu-drop-hover dd {display:block;}
+		
 
 #index-main {position:relative;padding-top:272px;height:422px;overflow:hidden;}
 	#publicity {position:absolute;top:115px;left:500px;font-size:14px;}
