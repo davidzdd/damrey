@@ -8,7 +8,7 @@
  	 	$urlPath = get_category_parents($curCat->term_id , true, $linkSeparator, false);
 		$urlPath = substr($urlPath, 0, strripos($urlPath, $linkSeparator));
  	 ?>
-	 <section id="wrap">
+	 <section id="wrap" class="wrap-article">
 
 		<?php get_sidebar(); ?>
 

@@ -29,7 +29,7 @@ table {border-collapse:collapse;}
 		.select dd a, .select dd a:visited {display:block;height:20px;line-height:20px;color:#333;overflow:hidden;}
 		.select dd a:hover {text-decoration:none;color:#fff;background:#CBCBCB;}
 
-body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#333;background:#FFF url(images/body_bg.jpg) repeat-x;}
+body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.jpg) repeat-x;}
 .index {background:#FFF url(images/index_bg.jpg) repeat-x;}
 
 #menu li, #download a, .sort-bd p a, .intro-hd {background:url(images/icon.png) no-repeat;}
@@ -40,13 +40,13 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#333;background:#
 	#meta {position:absolute;top:20px;right:0;text-align:right;color:#DDD;letter-spacing:2px;}
 		#meta a, #meta a:visited, #meta a:hover {color:#DDD;}
 	#menu {position:absolute;top:50px;right:-14px;}
-		#menu ul {font-size:18px;line-height:26px;}
+		#menu ul {font-size:14px;font-weight:700;line-height:26px;}
 		#menu li {float:left;margin-right:-1px;padding:0 15px;background-position:-59px 8px;}
 		#menu li.home {background:none;}
 		#menu a, #menu a:visited, #menu a:hover {float:left;color:#FFF;}
 		#menu .menu-drop {position:relative;float:left;height:40px;}
-			#menu .menu-drop dd {display:none;position:absolute;top:30px;left:0;padding:5px 10px;width:85px;background:#FFF;border-bottom:2px solid #197EBE;font-size:12px;line-height:20px;}
-			#menu .menu-drop dd a, #menu .menu-drop dd a:visited {color:#333;width:85px;height:20px;overflow:hidden;}
+			#menu .menu-drop dd {display:none;position:absolute;top:30px;left:0;padding:5px 10px;width:85px;background:#FFF;border-bottom:2px solid #197EBE;font-size:12px;line-height:20px;border:2px solid #779fc2;border-width:0 2px 2px 0;}
+			#menu .menu-drop dd a, #menu .menu-drop dd a:visited {color:#666;width:85px;height:20px;overflow:hidden;}
 			#menu .menu-drop dd a:hover {color:#0080CC;}
 
 #index-main {position:relative;padding-top:272px;height:422px;overflow:hidden;}
@@ -58,10 +58,10 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#333;background:#
 	#count p {padding-bottom:5px;height:30px;line-height:40px;border-bottom:1px solid #AEBED4;overflow:hidden;}
 	#count strong {float:left;width:155px;color:#0080cc;font:400 30px/30px Arial;letter-spacing:2px;}
 
-	#qq, #download {position:absolute;top:190px;left:25px;line-height:32px;}
+	#qq {position:absolute;top:240px;right:135px;line-height:32px;}
 		#qq a {margin-right:25px;}
 
-	#download {top:230px;}
+	#download {position:absolute;top:190px;left:25px;line-height:32px;top:230px;}
 		#download a {float:left;margin-right:25px;padding-left:35px;font-size:14px;background-position:0 -36px;}
 		#download .tload {background-position:0 -72px;}
 
@@ -88,38 +88,42 @@ body {font:400 12px/1.5 "Microsoft Yahei",Arial,"宋体";color:#333;background:#
 	#intro {width:980px;}
 		.intro-mod {float:left;margin-right:40px;width:410px;height:190px;line-height:22px;color:#333;overflow:hidden;}
 			.intro-hd {margin-bottom:10px;width:100%;height:30px;line-height:30px;background-repeat:repeat-x;background-position:0 -144px;}
-				.intro-hd h2 {float:left;font:400 16px/30px "Microsoft Yahei";}
+				.intro-hd h2 {float:left;font:400 17px/30px "黑体";}
 				.intro-hd a {float:right;} 
 			.intro-mod em {color:#f27d13;}
 		.news {margin:0;width:530px;}
 			.news .intro-bd {position:relative;padding-left:130px;width:400px;height:140px;}
 			.news .intro-bd li {float:left;width:400px;line-height:20px;}
-				.news .intro-bd li a {float:left;}
-				.news .intro-bd li span {float:right;}
+
 			.news .intro-bd .pnews {_display:inline;float:left;margin-left:-130px;width:120px;height:80px;zoom:1;overflow:hidden;}
 				.pnews a, .pnews a:visited, .pnews img {cursor:pointer;display:block;width:120px;height:80px;color:#d6effe;overflow:hidden;}
 				.pnews a:hover {text-decoration:underline;}
 				.pnews span {position:absolute;left:0;top:54px;display:block;width:120px;height:26px;line-height:26px;text-align:center;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#A5333333', endColorstr='#A5333333');background:rgba(51,51,51,0.65);overflow:hidden;}
-				.news .intro-bd .news-more a {position:absolute;top:-32px;right:5px;}
+				.news .intro-bd .news-more a, .news .intro-bd .news-more a:visited {float:right;color:#0080cc;}
+				.news .intro-bd .news-more a:hover {color:#f27d13;}
 
 
-#wrap {padding-top:46px;background:url(images/wrap_bg.jpg) no-repeat right 0;overflow:hidden;}	
+#wrap {padding-top:46px;background:url(images/wrap_bg.jpg) no-repeat right 0;overflow:hidden;}
+#wrap.wrap-article {background:url(images/wrap_bg1.jpg) no-repeat right 0;}
 	#submain {float:left;margin-right:25px;width:180px;overflow:hidden;}
 	#main {float:left;width:775px;overflow:hidden;}
 
 		.subitem {margin-bottom:10px;width:100%;font:400 14px/30px "Mircrosoft Yahei";}
-			.sub-hd {width:179px;height:30px;background:url(images/bg_others.png) no-repeat;color:#08C;font-weight:400;text-align:center;overflow:hidden;}
+			.sub-hd {width:179px;height:30px;background:url(images/bg_others.png) no-repeat;color:#08C;font-weight:400;text-align:center;font-family:"黑体";overflow:hidden;}
 			.sub-bd {padding:10px;width:157px;border:1px solid #E3E3E3;border-width:0 1px;background:#FFF;overflow:hidden;}
 			.sub-ft {width:179px;height:6px;background:url(images/bg_others.png) no-repeat 0 -84px;overflow:hidden;}
 
-			.sub-nav .sub-hd {font-weight:700;height:44px;font-size:22px;color:#FFF;line-height:46px;}
+			.sub-nav .sub-hd {font:700 22px/46px "黑体";height:44px;color:#FFF;}
 			.sub-nav .sub-bd {border-color:#0098DB;}
 				.sub-nav li {width:100%;height:30px;line-height:30px;border-bottom:1px solid #E3E3E3;font-weight:700;text-align:center;overflow:hidden;}
 				.sub-nav li.cur {background:url(images/bg_others.png) no-repeat 0 -197px;}
 			.sub-nav .sub-ft {background-position:0 -44px;}
 
 			.phone .sub-hd {background-position:0 -54px;}
-			.phone .sub-bd {padding:0 0 0 70px;width:107px;height:36px;line-height:18px;font-size:12px;color:#333;background:url(images/bg_others.png) no-repeat 15px -128px;}
+				.phone .sub-bd dl {margin-bottom:5px;}
+				.phone .sub-bd dt {margin-bottom:5px;height:24px;border-bottom:1px solid #e3e3e3;font:700 12px/24px "宋体";color:#0080cc;overflow:hidden;}
+				.phone .sub-bd dd {padding:0 0 0 70px;width:107px;line-height:18px;font-size:12px;color:#333;background:url(images/bg_others.png) no-repeat 15px -128px;overflow:hidden;}
+
 
 			.qq .sub-hd {background-position:0 -94px;color:#f67a1c;}
 			.qq .sub-bd {padding:0 15px;width:147px;}
