@@ -1,7 +1,7 @@
 <?php get_header(); ?>
  	<?php 
 		$curCat = get_queried_object();
-		$childCatArr = get_terms('category',"child_of={$curCat->term_id}&hierarchical=0&hide_empty=0&orderby=slug&order=ASC");
+		$childCatArr = get_terms('category',"parent={$curCat->term_id}&hierarchical=0&hide_empty=0&orderby=slug&order=ASC");
 		$linkSeparator = '&nbsp;>&nbsp;';
 		$urlPath = get_category_parents($curCat->term_id , true, $linkSeparator, false);
 		$urlPath = substr($urlPath, 0, strripos($urlPath, $linkSeparator));
@@ -22,18 +22,39 @@
 				<div class="cont-item">
 					<h1 class="cont-hd"><a href="<?php echo get_category_link($childCat->term_id)?>"><?php echo $childCat->name?></a></h1>
 					<div class="cont-bd">
-						<?php $curPosts = get_posts( array( 'category' => $childCat->term_id, 'numberposts'=>2 ))?>
-						<?php foreach($curPosts as $post){?>
-						<article class="article">
-							<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
-								<h3><?php echo $post->post_title?>
-								<img src="<?php if(is_single($post)){ echo get_bloginfo( 'template_url', 'display' )."/images/folder_logo.jpg";} else {echo get_bloginfo( 'template_url', 'display' )."/images/file_logo.png";}?>" alt="<?php echo $post->post_title?>"/>
-								</h3>
-							</a>
-							<p><?php echo htmlspecialchars(mb_substr(strip_tags($post->post_content),0,100)).'... ...'?></p>
-							<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
-						</article>
-						<?php }?>
+					<?php 
+					$child2CatArr = get_terms('category',"parent={$childCat->term_id}&hierarchical=0&hide_empty=0&orderby=slug&order=ASC");
+					if(!is_wp_error($child2CatArr) && count($child2CatArr)>0){
+						foreach ($child2CatArr as $child2Cat){
+					?>
+							<article class="article">
+								<a href="<?php echo get_category_link($child2Cat->term_id)?>" title="<?php echo $child2Cat->name?>">
+									<h3><?php echo $child2Cat->name?>
+									<img src="<?php echo get_bloginfo( 'template_url', 'display' )."/images/folder_logo.jpg"?>" alt="<?php echo $child2Cat->name?>"/>
+									</h3>
+								</a>
+								<p><?php echo htmlspecialchars(strip_tags($child2Cat->description))?></p>
+								<a href="<?php echo get_category_link($child2Cat->term_id)?>" class="view-all">查看详细</a>
+							</article>
+					<?php 
+						}
+					}else{
+						$curPosts = get_posts( array( 'category' => $childCat->term_id, 'numberposts'=>5 ));
+					    foreach($curPosts as $post){
+					?>
+							<article class="article">
+								<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
+									<h3><?php echo $post->post_title?>
+									<img src="<?php echo get_bloginfo( 'template_url', 'display' )."/images/article_logo2.png";?>" alt="<?php echo $post->post_title?>"/>
+									</h3>
+								</a>
+								<p><?php echo htmlspecialchars(mb_substr(strip_tags($post->post_content),0,100)).'... ...'?></p>
+								<a href="<?php echo get_permalink($post)?>" class="view-all">查看详细</a>
+							</article>
+					<?php 
+					    }
+					}
+					?>
 					</div>
 					<?php if(count($curPosts)==2){?>
 						<div class="cont-ft l2"><a href="<?php echo get_category_link($childCat->term_id)?>">查看更多</a></div>
@@ -48,7 +69,7 @@
 							<article class="article">
 								<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
 									<h3><?php echo $post->post_title?>
-									<img src="<?php if(is_single($post)){ echo get_bloginfo( 'template_url', 'display' )."/images/folder_logo.jpg";} else {echo get_bloginfo( 'template_url', 'display' )."/images/file_logo.png";}?>" alt="<?php echo $post->post_title?>"/>
+									<img src="<?php echo get_bloginfo( 'template_url', 'display' )."/images/article_logo2.png";?>" alt="<?php echo $post->post_title?>"/>
 									</h3>
 								</a>
 								<p><?php echo htmlspecialchars(mb_substr(strip_tags($post->post_content),0,100)).'... ...'?></p>
