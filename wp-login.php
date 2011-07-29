@@ -563,7 +563,10 @@ default:
 		if ( $secure_cookie && false !== strpos($redirect_to, 'wp-admin') )
 			$redirect_to = preg_replace('|^http://|', 'https://', $redirect_to);
 	} else {
+		/*delete by mo at 20110730 跳转到“文章编辑页面”
 		$redirect_to = admin_url();
+		*/
+		$redirect_to = admin_url("edit.php");
 	}
 
 	$reauth = empty($_REQUEST['reauth']) ? false : true;
