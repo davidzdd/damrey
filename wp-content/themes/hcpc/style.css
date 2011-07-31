@@ -39,13 +39,13 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 	#logo {float:left;margin-top:25px;}
 	#meta {position:absolute;top:20px;right:0;text-align:right;color:#DDD;letter-spacing:2px;}
 		#meta a, #meta a:visited, #meta a:hover {color:#DDD;}
-	#menu {position:absolute;top:50px;right:-14px;}
-		#menu ul {font-size:14px;font-weight:700;line-height:26px;}
+	#menu {position:absolute;top:50px;right:-14px;width:600px;}
+		#menu ul {float:right;font:700 16px/26px "宋体";}
 		#menu li {float:left;margin-right:-1px;padding:0 10px;background-position:-59px 8px;}
 		#menu li.home {background:none;}
 		#menu a, #menu a:visited {float:left;padding:0 7px;color:#FFF;}
 		#menu a:hover {color:#f79e4d;}
-		#menu .menu-drop {position:relative;float:left;height:40px;}
+		#menu .menu-drop {position:relative;float:left;_width:82px;height:40px;}
 			#menu .menu-drop dt {height:26px;overflow:hidden;}
 			#menu .menu-drop dd {display:none;position:absolute;top:26px;left:0;padding:5px 8px;width:85px;background:#FFF;border-bottom:2px solid #197EBE;font-size:12px;line-height:20px;border:2px solid #779fc2;border-width:0 2px 2px 0;}
 			#menu .menu-drop dd a, #menu .menu-drop dd a:visited {padding:0;color:#666;width:85px;height:20px;overflow:hidden;}
@@ -77,7 +77,7 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 		.sort-bd .c3 {background:url(images/sort_bg3.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg3.png',sizingMethod='scale');}
 		.sort-bd .c4 {background:url(images/sort_bg4.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg4.png',sizingMethod='scale');}
 		.sort-bd .c5 {background:url(images/sort_bg5.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='sort_bg5.png',sizingMethod='scale');}
-			.sort-bd h2 {margin-left:5px;padding-bottom:68px;height:47px;width:200px;font:400 18px/47px "Microsoft Yahei";text-indent:15px;}
+			.sort-bd h2 {margin-left:5px;padding-bottom:68px;height:47px;width:200px;font:700 18px/47px "宋体";text-indent:15px;}
 
 			.sort-bd h2 a, .sort-bd h2 a:visited {color:#d8d8da;}
 			.sort-bd p {padding:0 10px;width:190px;color:#666;}
@@ -138,10 +138,10 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 		#nav {height:44px;line-height:50px;}
 		#cont {padding-top:10px;overflow:hidden;}
 			.cont-item {margin-bottom:10px;}
-			.cont-hd {width:775px;height:36px;text-indent:5px;border-bottom:2px solid #DDD;font:400 20px/36px "Microsoft Yahei";}
+			.cont-hd {width:775px;height:36px;text-indent:5px;border-bottom:2px solid #DDD;font:400 20px/36px "宋体";}
 				.cont-bd .article {position:relative;padding:15px 0 15px 135px;min-height:86px;_height:86px;_zoom:1;border-bottom:1px solid #DDD;}
 				.cont-bd .article a {display:inline-block;_display:inline;_zoom:1;}
-				.cont-bd .article h3 {font:400 16px/24px "Microsoft Yahei";height:30px;}
+				.cont-bd .article h3 {font:400 16px/24px "宋体";height:30px;}
 					.cont-bd h3 img {position:absolute;top:15px;left:0;width:120px;height:90px;-webkit-border-radius:5px;border-radius:5px;}
 				.view-all, .view-all:visited, .view-all:hover {display:inline-block;_display:inline;_zoom:1;margin-top:5px;width:80px;height:25px;line-height:25px;color:#FFF;background:url(images/bg_others.png) no-repeat 0 -168px;text-align:center;letter-spacing:1px;}
 			.cont-ft {margin-top:5px;}
@@ -165,8 +165,8 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 
 		#article {padding-top:10px;font-size:14px;font-family:"宋体";}
 			#article .cont-hd {margin-bottom:10px;height:58px;border-bottom-width:1px;}
-			#article .cont-hd h1 {display:inline;font:400 22px/56px "Microsoft Yahei";color:#0080cc;}
-			#article .cont-hd span {font:400 12px/18px "Microsoft Yahei";}
+			#article .cont-hd h1 {display:inline;font:700 22px/56px "宋体";color:#0080cc;}
+			#article .cont-hd span {font:400 12px/18px "宋体";}
 				#article .article ul {padding:15px 0 15px 35px;list-style-type:disc;padding-left:30px;}
 				#article .article ol {padding:15px 0 15px 35px;list-style-type:decimal;padding-left:30px;}
 				#article .article ol ul, #article .article ul ul {list-style-type: square;}
@@ -175,7 +175,7 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 				#article .article del {color:red;text-decoration:line-through;}
 
 			.atc-table {margin-top:15px;width:775px;border:1px solid #CCC;}
-				.atc-table th {padding:0 15px;height:46px;line-height:46px;text-align:left;background:#EBF3F7;color:#0080cc;font:400 18px/46px "Microsoft Yahei";}
+				.atc-table th {padding:0 15px;height:46px;line-height:46px;text-align:left;background:#EBF3F7;color:#0080cc;font:400 18px/46px "宋体";}
 				.atc-table td {padding:0 5px;height:30px;line-height:30px;border-bottom:1px dotted #CBCBCB;}
 					.atc-table img {float:left;margin-top:2px;}
 
@@ -205,7 +205,7 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 			.confirm-wrap .ne {background:url(./images/win/ne.png) no-repeat 0 0;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="./images/win/ne.png" mce_src="./images/win/ne.png");}
 			.confirm-wrap .sw {background:url(./images/win/sw.png) no-repeat 0 0;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="./images/win/sw.png" mce_src="./images/win/sw.png");}
 			.confirm-wrap .es {background:url(./images/win/es.png) no-repeat 0 0;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="./images/win/es.png" mce_src="./images/win/es.png");}
-		.confirm-wrap h5 {height:27px;text-indent:10px;font:800 12px/27px "Microsoft YaHei";color:#FFF;background:#2477B1;}
+		.confirm-wrap h5 {height:27px;text-indent:10px;font:800 12px/27px "宋体";color:#FFF;background:#2477B1;}
 		.confirm-close {float:right;margin:-20px 7px 0 0;padding-top:13px;width:13px;height:0;background:url(../images/main.png) no-repeat -638px 1px;overflow:hidden;}
 		.confirm-msg {background:#FFF;}
 		.tips-btn {padding:5px 0;text-align:center;}
