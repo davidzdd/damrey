@@ -2,7 +2,7 @@
 	<div class="footer-cont">
 		<!-- 站点页尾 -->
 		<div id="copyright">
-			<?php echo get_post($dummy_id=8)->post_content;?>
+			<?php echo apply_filters('the_content', get_post($dummy_id=8)->post_content)?>
 		</div>
 
 		<dl id="friends" class="select">
