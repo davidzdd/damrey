@@ -11,7 +11,7 @@
 	    	$curQueryObj = $curCatArr[0];
 	    	$catName = $curQueryObj->name;
 		}
-		$childCatArr = get_terms('category',"child_of={$curQueryObj->term_id}&hierarchical=0&hide_empty=0&orderby=slug&order=ASC");
+		$childCatArr = get_terms('category',"parent={$curQueryObj->term_id}&hierarchical=0&hide_empty=0&orderby=slug&order=ASC");
 	?>
 	<div class="subitem sub-nav">
 		<h2 class="sub-hd"><?php echo $catName?></h2>
