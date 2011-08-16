@@ -27,7 +27,7 @@
 				<li <?php if($curQueryObj->term_id == $childCat->term_id){?>class="cur"<?php }?>><a href="<?php echo $url;?>"><?php echo $childCat->name?></a></li>
 			<?php }?>
 		<?php }else{?>
-			<?php $postAll = get_posts( array( 'category' => $curQueryObj->term_id, 'orderby'=>'ID', 'order'=>'ASC'))?>
+			<?php $postAll = get_posts( array( 'numberposts'=>-1, 'category' => $curQueryObj->term_id, 'orderby'=>'ID', 'order'=>'ASC'))?>
 			<?php foreach($postAll as $post){?>
 				<li <?php if($curPost->ID == $post->ID){?>class="cur"<?php }?>><a href="<?php echo get_permalink($post);?>"><?php echo $post->post_title?></a></li>
 			<?php }?>
