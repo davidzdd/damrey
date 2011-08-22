@@ -39,7 +39,7 @@
 					<?php 
 						}
 					}else{
-						$curPosts = get_posts( array( 'category' => $childCat->term_id, 'numberposts'=>5 ));
+						$curPosts = get_posts( array( 'numberposts'=>5, 'category' => $childCat->term_id, 'orderby'=>'post_name', 'order'=>'ASC' ));
 					    foreach($curPosts as $post){
 					?>
 							<article class="article">
@@ -64,7 +64,7 @@
 			<?php }else{?>
 				<div class="cont-item">
 					<div class="cont-bd">
-						<?php $posts = get_posts( array( 'category' => $curCat->term_id, 'orderby'=>'ID', 'order'=>'ASC' ))?>
+						<?php $posts = get_posts( array( 'numberposts'=>-1, 'category' => $curCat->term_id, 'orderby'=>'post_name', 'order'=>'ASC' ))?>
 						<?php foreach($posts as $post){?>
 							<article class="article">
 								<a href="<?php echo get_permalink($post)?>" title="<?php echo $post->post_title?>">
