@@ -2296,7 +2296,10 @@ class WP_Query {
 			$q['orderby'] = '';
 		} else {
 			// Used to filter values
-			$allowed_keys = array('author', 'date', 'title', 'modified', 'menu_order', 'parent', 'ID', 'rand', 'comment_count');
+			//$allowed_keys = array('author', 'date', 'title', 'modified', 'menu_order', 'parent', 'ID', 'rand', 'comment_count');
+			//add by mo at 2011-09-04 为了post_name（别名）的排序
+			$allowed_keys = array('author', 'date', 'title', 'modified', 'menu_order', 'parent', 'ID', 'rand', 'comment_count', 'post_name');
+			
 			if ( !empty($q['meta_key']) ) {
 				$allowed_keys[] = $q['meta_key'];
 				$allowed_keys[] = 'meta_value';
@@ -2331,13 +2334,16 @@ class WP_Query {
 					case 'comment_count':
 						$orderby = "$wpdb->posts.comment_count";
 						break;
+					//add by mo at 2011-09-04 为了post_name（别名）的排序
+					case 'post_name':
+						$orderby = "$wpdb->posts.post_name";
+						break;
 					default:
 						$orderby = "$wpdb->posts.post_" . $orderby;
 				}
 
 				$q['orderby'] .= (($i == 0) ? '' : ',') . $orderby;
 			}
-
 			// append ASC or DESC at the end
 			if ( !empty($q['orderby']))
 				$q['orderby'] .= " {$q['order']}";
