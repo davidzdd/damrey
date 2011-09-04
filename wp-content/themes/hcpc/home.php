@@ -33,7 +33,7 @@
 		<!-- qq -->
 		<div id="qq">
 			<iframe scrolling="no" frameborder="0" width="102" height="24" allowtransparency="true" src="https://id.b.qq.com/static/account/bizqq/wpa/wpa_a02.html?type=2&kfuin=800057123&ws=http%3A%2F%2F&btn1=%E4%BC%81%E4%B8%9AQQ%E4%BA%A4%E8%B0%88"></iframe>
-			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100165105&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:100145105:47" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100165105&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:100145105:47" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
 		</div>
 
 		<!-- 指示牌 -->
