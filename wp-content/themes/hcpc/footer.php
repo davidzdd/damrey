@@ -17,5 +17,9 @@
 </footer>
 
 <script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/script.js"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fac15e0060891fde163b9d44e5a144b09' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </body> 
 </html>
