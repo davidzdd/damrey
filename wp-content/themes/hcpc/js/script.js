@@ -120,4 +120,27 @@ $(function(){
 		});
 	}
 
+	// ±ßÀ¸¹ö¶¯
+	var win = $(window),
+		sub = $('#submain'),
+		ie6 = $.browser.msie && $.browser.version < 7;
+
+	win.scroll(function(){
+		if (ie6) {
+			if (win.scrollTop() >= 146) {
+				sub.css('top',win.scrollTop());
+			} else {
+				sub.css('top','146px');
+			}
+		} else {
+			if (win.scrollTop() >= 146) {
+				sub.css('top',0);
+			} else {
+				sub.css('top','146px');
+			}
+		}
+		
+	})
+	
+
 });

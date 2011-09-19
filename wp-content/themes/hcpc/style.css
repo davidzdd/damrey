@@ -110,8 +110,8 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 
 #wrap {padding-top:46px;background:url(images/wrap_bg.jpg) no-repeat right 0;overflow:hidden;}
 #wrap.wrap-article {background:url(images/wrap_bg1.jpg) no-repeat right 0;}
-	#submain {float:left;margin-right:25px;width:180px;overflow:hidden;}
-	#main {float:left;width:775px;overflow:hidden;}
+	#submain {position:fixed;_position:absolute;top:146px;width:180px;overflow:hidden;}
+	#main {float:right;width:775px;overflow:hidden;}
 
 		.subitem {margin-bottom:10px;width:100%;font:400 14px/30px "Mircrosoft Yahei";}
 			.sub-hd {width:179px;height:30px;background:url(images/bg_others.png) no-repeat;color:#08C;font-weight:400;text-align:center;font-family:"黑体";overflow:hidden;}
