@@ -63,8 +63,9 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 	#count p {padding-bottom:5px;height:30px;line-height:40px;border-bottom:1px solid #AEBED4;overflow:hidden;}
 	#count strong {float:left;width:155px;color:#0080cc;font:400 30px/30px Arial;letter-spacing:2px;}
 
-	#qq {position:absolute;top:240px;right:135px;line-height:32px;}
-		#qq a {margin-right:25px;}
+	#qq {position:absolute;top:240px;left:550px;line-height:32px;}
+		#qq span {float:left;margin-right:30px;height:24px;overflow:hidden;}
+		#qq img {height:24px;}
 
 	#download {position:absolute;top:190px;left:25px;line-height:32px;top:230px;}
 		#download a {float:left;margin-right:25px;padding-left:35px;font-size:14px;background-position:0 -36px;}
