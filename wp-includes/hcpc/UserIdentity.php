@@ -42,12 +42,16 @@ class UserIdentity {
 		return $symbol;
 	}
 	
+	private static $logonUser = null;
 	/**
 	 * 得到登录的用户信息（session或者cookie）
 	 */
 	public static function getLogonUser() {
 		global $wpdb;
 		$logonUser = null;
+		if(self::$logonUser){
+			return self::$logonUser;
+		}
 		if (isset ( $_SESSION [self::SESSION_LOGIN_SYMBOL] )) {
 			$logonUid = intval ( $_SESSION [self::SESSION_LOGIN_SYMBOL] );
 			$logonUser = $wpdb->get_row($wpdb->prepare("SELECT * FROM user WHERE id=%d", array($logonUid)));
@@ -61,6 +65,7 @@ class UserIdentity {
 				}
 			}
 		}
+		self::$logonUser = $logonUser;
 		return $logonUser;
 	}
 	

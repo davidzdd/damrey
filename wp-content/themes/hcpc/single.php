@@ -40,7 +40,7 @@
 									</tr>
 									<?php $i=1;foreach ($attachments as $att){?>
 										<tr>
-											<td><a href="<?php echo wp_get_attachment_url($att->ID)?>" target="_blank" title="<?php echo $att->post_excerpt?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/attachment.gif" alt="<?php echo $att->post_excerpt?>" /><?php echo esc_html( basename( $att->guid ))?></a></td>
+											<td><a id="attach_<?php echo $att->ID?>" href="#" target="_blank" title="<?php echo $att->post_excerpt?>"><img src="<?php bloginfo( 'template_url' ); ?>/images/attachment.gif" alt="<?php echo $att->post_excerpt?>" /><?php echo esc_html( basename( $att->guid ))?></a></td>
 										</tr>
 									<?php $i++;}?>
 								</tbody>
@@ -54,5 +54,29 @@
 		</div>
 	</section>
 </div>
-
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/site.js"></script>
+<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/ed.js"></script>
+<script type="text/javascript">
+<!--
+$(function(){
+	$("[id^=attach_]").click(function(){
+		<?php $currentFrontUser = UserIdentity::getLogonUser()?>
+		<?php if ( $currentFrontUser && $currentFrontUser->id>0) {?>
+		var loged = true;
+		<?php }else{?>
+		var loged = false;
+		<?php }?>
+		if(!loged){
+			site.confirm("提示信息",'登录后，方可进行附件下载！',function(){
+				window.location.href='<?php echo home_url("/login.php")?>';
+				return true;
+			});
+			return false;
+		}
+		window.location.href='<?php echo home_url("/download.php")?>?id='+this.id.split('_')[1];
+		return false;
+	});
+})
+//-->
+</script>
 <?php get_footer(); ?>
