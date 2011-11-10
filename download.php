@@ -5,7 +5,7 @@
  * @date 2011-10-19
  */
 /** Make sure that the WordPress bootstrap has run before continuing. */
-require (dirname ( __FILE__ ) . '/wp-load.php');
+require_once (dirname ( __FILE__ ) . '/wp-load.php');
 require_once (ABSPATH . '/wp-includes/hcpc/functions.php');
 require_once (ABSPATH . '/wp-includes/hcpc/UserIdentity.php');
 $currentFrontUser = UserIdentity::getLogonUser();
