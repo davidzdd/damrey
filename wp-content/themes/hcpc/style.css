@@ -55,6 +55,11 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 		
 
 #index-main {position:relative;padding-top:272px;height:422px;overflow:hidden;}
+	#broadcast {position:absolute;top:80px;left:500px;padding:0 10px 0 30px;width:340px;height:30px;line-height:30px;color:#3ab349;background:url(images/broad_bg.jpg) no-repeat;white-space:nowrap;}
+		#broadcast span {float:left;width:36px;overflow:hidden;}
+		#broad-cont {position:relative;float:left;width:304px;height:30px;overflow:hidden;}
+			#broad-cont p {position:absolute;top:0;left:0;}
+			
 	#publicity {position:absolute;top:115px;left:500px;font-size:14px;}
 
 	#count {position:absolute;top:90px;left:20px;width:200px;height:60px;line-height:24px;font-size:14px;overflow:hidden;}
@@ -63,9 +68,10 @@ body {font:400 12px/1.5 "宋体";color:#333;background:#FFF url(images/body_bg.j
 	#count p {padding-bottom:5px;height:30px;line-height:40px;border-bottom:1px solid #AEBED4;overflow:hidden;}
 	#count strong {float:left;width:155px;color:#0080cc;font:400 30px/30px Arial;letter-spacing:2px;}
 
-	#qq {position:absolute;top:240px;left:550px;line-height:32px;}
-		#qq span {float:left;margin-right:30px;height:24px;overflow:hidden;}
-		#qq img {height:24px;}
+	#qq {position:absolute;top:236px;left:550px;padding-bottom:4px;line-height:32px;}
+		#qq span {position:relative;float:left;margin-right:30px;overflow:hidden;}
+		#qq .msg {margin-top:-4px;}
+		#qq .phone {margin-top:-2px;}
 
 	#download {position:absolute;top:190px;left:25px;line-height:32px;top:230px;}
 		#download a {float:left;margin-right:25px;padding-left:35px;font-size:14px;background-position:0 -36px;}

@@ -8,8 +8,8 @@ function getParamFromRequest($param, $defaultValue = '') {
  *
  * @return int $page
  */
-function getPageFromGET() {
-	$page = getParamFromRequest ( 'page', 1 );
+function getPageFromGET($paramName = 'page') {
+	$page = getParamFromRequest ( $paramName, 1 );
 	$page = intval ( $page );
 	if ($page <= 0) {
 		$page = 1;

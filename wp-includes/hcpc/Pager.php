@@ -17,7 +17,7 @@ class Pager {
      * 
      * @return html
      */
-    public static function getPager ($currentPage, $totalCount, $perPage, $url, $tip='' ,$pageLength = '5', $css = 'page') {
+    public static function getPager ($currentPage, $totalCount, $perPage, $url, $tip='' ,$pageLength = '5', $css = 'page', $paramName='page') {
         $totalPages = ceil($totalCount / $perPage); //总页数
         $html = '';
         $html .= '<div id="' . $css . '">';
@@ -26,26 +26,26 @@ class Pager {
 	        $html .= $tip ?  $tip : '';
             $currentPage = ($currentPage) ? $currentPage : 1;
             
-            $html .= self::getPrevious($currentPage, $url);
-            $html .= self::getPages($currentPage, $url, $pageLength, $totalPages);
-            $html .= self::getNext($currentPage, $url, $totalPages);
+            $html .= self::getPrevious($currentPage, $url, $paramName);
+            $html .= self::getPages($currentPage, $url, $pageLength, $totalPages, $paramName);
+            $html .= self::getNext($currentPage, $url, $totalPages, $paramName);
         
         }
         $html .= '</div>';
         return $html;
     }
 
-    private static function getPrevious ($currentPage, $url) {
+    private static function getPrevious ($currentPage, $url, $paramName='page') {
         $html = '';
         $prePage = $currentPage - 1;
         if ($prePage > 0) {
-            $upUrl = self::getPageUrl($url, $prePage);
+            $upUrl = self::getPageUrl($url, $prePage, $paramName);
             $html .= '<a href="' . $upUrl . '">上一页</a>';
         }
         return $html;
     }
 
-    private static function getPages ($currentPage, $url, $pageLength, $totalPages) {
+    private static function getPages ($currentPage, $url, $pageLength, $totalPages, $paramName='page') {
         $html = '';
         $space = floor($pageLength / 2);
         //确认分页中start page
@@ -66,33 +66,33 @@ class Pager {
         
         if ($start > 1) {
             //显示第一页的分页信息
-            $pageUrl = self::getPageUrl($url, 1);
+            $pageUrl = self::getPageUrl($url, 1, $paramName);
             $html .= '<a href="' . $pageUrl . '">1..</a>';
         }
         for ($i = $start; $i <= $end; $i++) {
-            $pageUrl = self::getPageUrl($url, $i);
+            $pageUrl = self::getPageUrl($url, $i, $paramName);
             $class = ($i == $currentPage)? 'class="current"':'';
             $html .= '<a '. $class .'href="' . $pageUrl . '">' . $i . '</a>';
         }
         if ($end < $totalPages) {
             //显示第一页的分页信息
-            $pageUrl = self::getPageUrl($url, $totalPages);
+            $pageUrl = self::getPageUrl($url, $totalPages, $paramName);
             $html .= '<a href="' . $pageUrl . '">..' . $totalPages . '</a>';
         }
         return $html;
     }
 
-    private static function getNext ($currentPage, $url, $totalPages) {
+    private static function getNext ($currentPage, $url, $totalPages, $paramName='page') {
         $html = '';
         if (($currentPage - $totalPages) < 0) {
-            $downUrl = self::getPageUrl($url, $currentPage + 1);
+            $downUrl = self::getPageUrl($url, $currentPage + 1, $paramName);
             $html .= '<a  class="nextpage" href="' . $downUrl . '">下一页</a>';
         }
         return $html;
     }
 
-    private static function getPageUrl ($url, $pageNo) {
-        return $url . '&page=' . $pageNo;
+    private static function getPageUrl ($url, $pageNo, $paramName='page') {
+        return $url . '&'.$paramName.'=' . $pageNo;
     }
 
 }

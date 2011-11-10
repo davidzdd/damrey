@@ -33,6 +33,16 @@
 									<td><input id="repwd" name="repwd" type="password" class="txt" /></td>
 									<td class="reg-tip">请再输入一遍您上面输入的密码。</td>
 								</tr>
+								<tr>
+									<th>电话：</th>
+									<td><input id="phone" name="phone" type="text" class="txt" /></td>
+									<td class="reg-tip">固定电话或者手机均可。</td>
+								</tr>
+								<tr>
+									<th>邮箱：</th>
+									<td><input id="email" name="email" type="text" class="txt" /></td>
+									<td class="reg-tip"></td>
+								</tr>
 <!--								<tr>-->
 <!--									<th>验证码：</th>-->
 <!--									<td><input id="captcha" name="captcha" type="text" class="txt" /></td>-->
@@ -82,7 +92,7 @@ var Act = {
 	register:function(id){
 		if(Act.validate()){
 			Act.registerSymbol=1;
-			var data = 'name='+site.getEncodeValue("name")+"&pwd="+site.getEncodeValue("pwd")+"&repwd="+site.getEncodeValue("repwd");
+			var data = 'name='+site.getEncodeValue("name")+"&pwd="+site.getEncodeValue("pwd")+"&repwd="+site.getEncodeValue("repwd")+"&phone="+site.getEncodeValue("phone")+"&email="+site.getEncodeValue("email");
 			site.ajaxSubmit('<?php echo site_url("/register.php")?>', data, function(res){
 				Act.registerSymbol=0;
 				if(res.code==100){
@@ -140,6 +150,28 @@ var Act = {
 		if(rePwd != pwd){
 			alert("两次密码输入不相同");
 			$("#repwd").focus();
+			return false;
+		}
+		var phone = site.getValue("phone");
+		phoneLength=phone.length;
+		if(phoneLength<=0){
+			alert("请输入电话号码，以便我们与你联系！");
+			$("#phone").focus();
+			return false;
+		}else if(phoneLength<7 || phoneLength>=15){
+			alert("请输入正确的电话号码");
+			$("#phone").focus();
+			return false;
+		}
+		var email = site.getValue("email");
+		emailLength=email.length;
+		if(emailLength<=0){
+			alert("请输入邮箱，以便我们与你联系！");
+			$("#email").focus();
+			return false;
+		}else if(emailLength>=30){
+			alert("请邮箱不能超过30个字符");
+			$("#email").focus();
 			return false;
 		}
 //		var captcha = site.getValue("captcha");

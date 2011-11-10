@@ -146,6 +146,24 @@ $(function(){
 		sub.css({'position':'absolute','top':'146px'});
 	}
 	
-	
+	// ¹ã²¥¹ö¶¯
+	var $bro = $('#broad-cont').find('p'),
+		broWidth = $bro.width(),
+		scrWidth = 304 - broWidth;
 
+	if (broWidth > 304) {
+		broadScroll();
+		setInterval(broadScroll, 10000);
+	}
+
+	function broadScroll() {
+		$bro.animate({
+			left:scrWidth
+		}, 7000, function() {
+			setTimeout(function(){
+				$bro.css('left', 0);
+			}, 1000)
+		});
+	}
+		
 });

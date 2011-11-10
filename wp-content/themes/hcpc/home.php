@@ -13,7 +13,14 @@
  		}
  	?>
 	<section id="index-main" style="background:url(<?php echo $indexUrl?>) no-repeat;">
-
+		<?php $broadcase = get_post($dummy_id=1568);?>
+		<?php if($broadcase){?>
+		<!-- 广播 -->
+		<div id="broadcast">
+			<span>广播：</span>
+			<div id="broad-cont"><p><?php echo $broadcase->post_content?></p></div>	
+		</div>
+		<?php }?>
 		<!-- 宣传语 -->
 		<div id="publicity">通过我们专业、权威、高效的服务，让您和您的企业</div>
 
@@ -35,8 +42,8 @@
 			<span>
 				<iframe scrolling="no" frameborder="0" width="102" height="24" allowtransparency="true" src="https://id.b.qq.com/static/account/bizqq/wpa/wpa_a02.html?type=2&kfuin=800057123&ws=http%3A%2F%2F&btn1=%E4%BC%81%E4%B8%9AQQ%E4%BA%A4%E8%B0%88"></iframe>
 			</span>
-			<span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100165105&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:100145105:47" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span>
-			<span><img height="24" src="<?php bloginfo( 'template_url' ); ?>/images/phone.png" alt="0571-87889048" title="0571-87889048" /></span>
+			<span class="msg"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100165105&site=qq&menu=yes"><img height="28" border="0" src="http://wpa.qq.com/pa?p=2:100145105:47" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span>
+			<span class="phone"><img height="30" src="<?php bloginfo( 'template_url' ); ?>/images/phone.jpg" alt="0571-87889048" title="0571-87889048" /></span>
 		</div>
 
 		<!-- 指示牌 -->

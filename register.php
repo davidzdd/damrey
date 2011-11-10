@@ -88,7 +88,7 @@ function validate() {
 				$dataBindType[] = '%s';
 			}
 		}
-	}
+	}else $result = FALSE;
 
 	$pwd = utf8ToGbk(getParamFromRequest ( "pwd" ));
 	if($pwd){
@@ -105,7 +105,29 @@ function validate() {
 				$result = FALSE;
 			}
 		}
-	}
+	}else $result = FALSE;
+	
+	$phone = utf8ToGbk(getParamFromRequest ( "phone" ));
+	if($phone){
+		$phoneLen = mb_strlen($phone, 'gbk');
+		if($phoneLen<7 || $phoneLen>=15){
+			$result = FALSE;
+		}else{
+			$data['phone'] = $phone;
+			$dataBindType[] = '%s';
+		}
+	}else $result = FALSE;
+	
+	$email = utf8ToGbk(getParamFromRequest ( "email" ));
+	if($email){
+		$emailLen = mb_strlen($email, 'gbk');
+		if($emailLen>=30){
+			$result = FALSE;
+		}else{
+			$data['email'] = $email;
+			$dataBindType[] = '%s';
+		}
+	}else $result = FALSE;
 	
 	$captcha = getParamFromRequest ( "captcha" );
 	if($captcha){
